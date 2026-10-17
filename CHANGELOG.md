@@ -2,6 +2,12 @@
 
 Os pacotes abaixo foram preparados em 17/10/2026 e arquivados no GitHub posteriormente. Os arquivos de versões anteriores são preservados; as tags deste repositório identificam distribuições, sem reconstruir um histórico de commits do aplicativo.
 
+## [0.10.0 — Instalador e atualização automática](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.10.0)
+
+Instalador Windows por usuário com atalhos e desinstalador. O app instalado procura e baixa atualizações pelo GitHub Releases fora de salas, valida assinatura Ed25519 e SHA-512, e instala ao sair ou reiniciar. Fechar para a bandeja com atualização pronta preserva o funcionamento em segundo plano, sem ligar captura. Preferências são mantidas.
+
+A migração de ZIP antigo para instalador é manual na primeira vez. O portátil não atualiza automaticamente. A assinatura própria das atualizações não substitui um certificado Authenticode do Windows; esta prévia pode mostrar editor desconhecido.
+
 ## [0.9.0 — Acesso gratuito pelo celular com link e QR Code](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.9.0)
 
 Página pública HTTPS no Cloudflare Pages, link privado e QR Code gerado no app. O link completo também é aceito no campo de convite do aplicativo.
