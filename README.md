@@ -1,29 +1,34 @@
 # TelaLeve — Downloads e versões
 
-TelaLeve é um aplicativo de compartilhamento de tela e webcam por P2P. Este repositório público guarda os pacotes distribuídos e o histórico de versões, sem o código-fonte do aplicativo.
+Compartilhamento de tela e webcam por P2P. Este repositório público guarda instaladores, pacotes e o histórico das distribuições, sem os ZIPs de código-fonte.
 
-**[Baixar a versão mais recente](https://github.com/MuriloBalancieri/telaleve-releases/releases/latest)** · **[Todas as versões](https://github.com/MuriloBalancieri/telaleve-releases/releases)** · **[Histórico de mudanças](CHANGELOG.md)**
+**[Baixar o instalador mais recente](https://github.com/MuriloBalancieri/telaleve-releases/releases/latest)** · **[Histórico completo](https://github.com/MuriloBalancieri/telaleve-releases/releases)** · **[Mudanças por versão](CHANGELOG.md)**
 
-## Começar
+## Instalar
 
-1. Na versão mais recente, baixe o arquivo **TelaLeve-0.9.0-Windows.zip**.
-2. Extraia todo o ZIP e abra **TelaLeve.exe**.
-3. Crie uma sala ou entre com o convite de um amigo.
-4. Dentro da sala, escolha compartilhar tela e/ou webcam quando quiser.
-5. Para amigos no celular, use **Entrar pelo celular** e compartilhe o link ou QR Code.
+1. Na release mais recente, baixe **TelaLeve-Setup-0.10.0.exe**.
+2. Encerre a versão anterior pelo ícone da bandeja e execute o instalador.
+3. Abra o TelaLeve pelo atalho e crie uma sala ou entre com um convite.
+4. Compartilhe tela e/ou webcam somente quando quiser.
 
-Página de acesso: **https://telaleve-p2p.pages.dev/**. É preciso ter convite para entrar; a página não lista salas. O vídeo continua P2P. Nenhum serviço TURN é incluído; algumas redes podem exigir um relay configurado à parte.
+A instalação é por usuário, com atalhos e desinstalador. Não precisa instalar Node.js. Quem usava o ZIP precisa instalar uma vez para receber atualizações automáticas.
 
-A sala permite o anfitrião e até dez convidados. Cada participante pode assistir até duas imagens. A captura começa desligada; áudio não está implementado. Uma distribuição nativa para Mac ainda não foi preparada. O navegador depende das capacidades e permissões de cada dispositivo.
+## Atualizações automáticas
 
-## Atualizações
+O aplicativo instalado procura versões ao abrir e periodicamente enquanto está aberto. Procura e download são adiados durante salas. Uma atualização pronta é instalada ao sair, ou pelo botão **Reiniciar e atualizar** nas opções. Se fechar para a bandeja com uma atualização pronta, somente a bandeja é reaberta após instalar. As preferências são preservadas.
 
-As novas distribuições serão organizadas em **Releases**. O app atual é portátil: baixe a versão nova, encerre a anterior pela bandeja e extraia o pacote completo. Publicar os pacotes no GitHub não ativa atualização automática no programa; instalador e atualizador integrado ainda estão pendentes.
+As atualizações exigem uma assinatura Ed25519 reconhecida pelo app e conferência de tamanho/SHA-512, inclusive para instalador em cache. Não é necessário token ou conta GitHub para baixar. A assinatura de atualização é independente de Authenticode: esta prévia ainda pode aparecer como editor desconhecido no Windows.
+
+O ZIP **TelaLeve-0.10.0-Windows.zip** é uma alternativa portátil e não recebe atualização automática. Não use os ZIPs “Source code” gerados automaticamente pelo GitHub para instalar: eles contêm apenas esta documentação.
+
+## Celular e navegador
+
+Dentro da sala, clique em **Entrar pelo celular** e envie o link privado ou QR Code. A página é **https://telaleve-p2p.pages.dev/**. Ela não lista salas: o convite é necessário. O vídeo continua P2P; algumas redes restritivas podem precisar de TURN, não incluído no app.
+
+A sala permite anfitrião e dez convidados. Cada pessoa pode assistir até duas imagens. A captura começa desligada; áudio e início automático com o Windows ainda não estão implementados. Mac nativo, celulares físicos e várias operadoras ainda precisam de validação completa.
 
 ## Histórico e integridade
 
-Os pacotes 0.1 a 0.9 foram preservados a partir das distribuições locais originais. As tags identificam os pacotes publicados, sem representar commits históricos do código-fonte. Leia as notas antes de usar uma versão antiga: os protocolos e recursos variam entre elas. Prefira a versão mais recente.
+As versões anteriores permanecem em Releases, com suas notas e arquivos originais. As tags identificam distribuições, não reconstroem commits históricos do código-fonte. Prefira a versão mais recente: os protocolos e recursos variam entre versões.
 
-Cada release inclui **SHA256SUMS.txt**, calculado para os arquivos publicados. Os ZIPs **Source code** que o GitHub gera automaticamente contêm esta documentação, não o aplicativo; use o ZIP **Windows** em Assets.
-
-As versões são prévias de desenvolvimento sem assinatura digital. As notas e os relatórios publicados descrevem os testes realizados e suas limitações; não há garantia de desempenho ou conexão em todos os computadores e redes.
+Cada release inclui **SHA256SUMS.txt**. A partir da 0.10, EXE, blockmap, latest.yml e TelaLeve-update.json são produzidos juntos para atualização do app instalado. Os testes e limites de cada entrega estão registrados em suas notas e relatórios.
