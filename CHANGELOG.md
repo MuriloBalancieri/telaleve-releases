@@ -2,6 +2,12 @@
 
 Os pacotes abaixo foram preparados em 17/10/2026 e arquivados no GitHub posteriormente. Os arquivos de versões anteriores são preservados; as tags deste repositório identificam distribuições, sem reconstruir um histórico de commits do aplicativo.
 
+## [0.11.0 — Iniciar com Windows e tela com áudio](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.11.0)
+
+Opção para iniciar somente a bandeja nativa com o Windows, desligada por padrão. Atualização preserva a escolha e desinstalação remove a entrada. Nenhuma sala ou captura é iniciada automaticamente.
+
+Tela com áudio opcional da saída padrão do Windows, silenciamento independente, volume por transmissão recebida e pausa conjunta de som/imagem. Webcam permanece sem microfone. Áudio do Discord também entra se usar a mesma saída; captura exclusiva por aplicativo ainda não está implementada. Navegadores dependem da disponibilidade de captura da fonte.
+
 ## [0.10.0 — Instalador e atualização automática](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.10.0)
 
 Instalador Windows por usuário com atalhos e desinstalador. O app instalado procura e baixa atualizações pelo GitHub Releases fora de salas, valida assinatura Ed25519 e SHA-512, e instala ao sair ou reiniciar. Fechar para a bandeja com atualização pronta preserva o funcionamento em segundo plano, sem ligar captura. Preferências são mantidas.
