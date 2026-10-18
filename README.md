@@ -6,13 +6,13 @@ Compartilhe sua tela e webcam com seus amigos. Para usar o aplicativo, baixe **s
 
 ## Qual arquivo baixar?
 
-Downloads da versão **0.15.5**:
+Downloads da versão **0.15.6**:
 
 | Seu computador | Download |
 | --- | --- |
-| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.5/TelaLeve-Setup-0.15.5.exe) |
-| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.5/TelaLeve-0.15.5-mac-arm64.dmg) |
-| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.5/TelaLeve-0.15.5-mac-x64.dmg) |
+| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.6/TelaLeve-Setup-0.15.6.exe) |
+| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.6/TelaLeve-0.15.6-mac-arm64.dmg) |
+| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.6/TelaLeve-0.15.6-mac-x64.dmg) |
 
 No Mac, abra **menu Apple → Sobre Este Mac**. Se aparecer **Chip Apple M…**, escolha Apple Silicon. Se aparecer **Processador Intel**, escolha Intel.
 
@@ -92,3 +92,7 @@ Na versão **0.15.4**, clique em **◐** ao lado da engrenagem, ou abra **Opçõ
 ### O botão não abriu o aplicativo?
 
 Atualize para **0.15.5** e reabra a página do convite. Clique em **Abrir no TelaLeve** e confirme a abertura se o navegador perguntar. Esta versão corrige o endereço normalizado pelo Windows. Se a abertura for recusada pelo navegador, use **Continuar no navegador**.
+
+### Tela cheia e janela flutuante
+
+Atualize para **0.15.6**. Na transmissão, use **Ampliar** para tela cheia; **Esc** ou **Sair da tela cheia** volta à sala. **Picture-in-Picture** abre uma janela flutuante, inclusive com o app minimizado. O botão PiP aparece onde há suporte. O áudio mantém sua escolha de Ouvir/Silenciar e volume.
