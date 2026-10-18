@@ -1,3 +1,12 @@
+## 0.15.6 — Tela cheia e Picture-in-Picture
+
+- Corrige Ampliar, com tela cheia real e saída por Esc.
+- Adiciona Picture-in-Picture nativo por transmissão recebida.
+- Mantém vídeo com a janela principal oculta durante PiP; retoma economia ao fechar.
+- Reutiliza o vídeo recebido e preserva áudio/volume; limpa o modo ao retirar a fonte.
+- Mensagens de erro e controles aguardam carregamento do vídeo.
+- 58 testes unitários e fluxo integrado Windows; Mac físico pendente.
+
 ## 0.15.5 — Corrigir abertura no aplicativo
 
 - Aceita o endereço com barra acrescentada pela normalização do sistema.
