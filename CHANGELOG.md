@@ -2,6 +2,14 @@
 
 Os pacotes abaixo foram preparados em 17/10/2026 e arquivados no GitHub posteriormente. Os arquivos de versões anteriores são preservados; as tags deste repositório identificam distribuições, sem reconstruir um histórico de commits do aplicativo.
 
+## [0.12.0 — Áudio de aplicativo e tela sem Discord](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.12.0)
+
+Áudio da janela usa captura nativa por árvore de processos do aplicativo escolhido. Tela inteira mistura sessões permitidas e exclui Discord instalado (incluindo novas instâncias) e o próprio TelaLeve. Sem driver, gravação ou mudança do som local. Descoberta separada da mixagem, temporização de áudio do Windows, buffers limitados e encerramento ao sair.
+
+Falhas não ativam áudio geral. Outras janelas/abas do mesmo programa não são separadas. Discord em navegador não é filtrado de forma independente. Recurso disponível no app Windows com suporte à API de loopback por processo; navegador/Mac continuam com seu seletor nativo.
+
+25 testes unitários, tons sintéticos isolados, reinício de instâncias Discord simuladas, envio nativo de áudio/vídeo por P2P, controles e regressão de tela+webcam em dois apps. Discord real em chamada, Windows 10 físico e Mac não foram validados nesta etapa.
+
 ## [0.11.0 — Iniciar com Windows e tela com áudio](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.11.0)
 
 Opção para iniciar somente a bandeja nativa com o Windows, desligada por padrão. Atualização preserva a escolha e desinstalação remove a entrada. Nenhuma sala ou captura é iniciada automaticamente.
