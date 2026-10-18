@@ -1,3 +1,11 @@
+## 0.15.4 — Cores do seu aplicativo
+
+- Seis paletas, incluindo tema claro, e cores de destaque e fundo personalizadas.
+- Prévia imediata, salvar, cancelar e restaurar a paleta original.
+- Preferência local por usuário, sem alterar os amigos, a sala ou os vídeos.
+- Contraste automático dos textos e controles.
+- 50 testes unitários e teste da interface Windows; Mac físico pendente.
+
 ## 0.15.3 — Abrir no TelaLeve
 
 - Botão na página do convite abre o aplicativo instalado no Windows e Mac.
