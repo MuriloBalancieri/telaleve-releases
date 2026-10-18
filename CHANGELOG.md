@@ -1,3 +1,11 @@
+## 0.15.7 — Mais fácil de assistir
+
+- Cartões separados para tela e webcam, com nome da pessoa e botões Assistir / Parar de assistir.
+- Destaque Assistindo agora e orientação ao atingir duas transmissões abertas.
+- Pessoas que não transmitem ficam separadas das opções de vídeo.
+- Parar de assistir também disponível no player; foco, áudio e volume preservados nas atualizações da sala.
+- Sem prévias extras ou aumento no limite de dois vídeos recebidos.
+
 ## 0.15.6 — Tela cheia e Picture-in-Picture
 
 - Corrige Ampliar, com tela cheia real e saída por Esc.
