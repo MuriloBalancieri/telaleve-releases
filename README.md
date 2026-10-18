@@ -6,13 +6,13 @@ Compartilhe sua tela e webcam com seus amigos. Para usar o aplicativo, baixe **s
 
 ## Qual arquivo baixar?
 
-Downloads da versão **0.13.0**:
+Downloads da versão **0.14.0**:
 
 | Seu computador | Download |
 | --- | --- |
-| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.13.0/TelaLeve-Setup-0.13.0.exe) |
-| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.13.0/TelaLeve-0.13.0-mac-arm64.dmg) |
-| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.13.0/TelaLeve-0.13.0-mac-x64.dmg) |
+| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.14.0/TelaLeve-Setup-0.14.0.exe) |
+| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.14.0/TelaLeve-0.14.0-mac-arm64.dmg) |
+| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.14.0/TelaLeve-0.14.0-mac-x64.dmg) |
 
 No Mac, abra **menu Apple → Sobre Este Mac**. Se aparecer **Chip Apple M…**, escolha Apple Silicon. Se aparecer **Processador Intel**, escolha Intel.
 
@@ -42,7 +42,7 @@ A sala permite o anfitrião e até dez convidados. Cada pessoa pode assistir at�
 
 **Áudio no Windows:** marque **Compartilhar áudio** no seletor de transmissão. Ao escolher uma janela, o app captura o áudio daquele aplicativo, podendo incluir outras janelas/abas dele. Ao escolher a tela inteira, exclui o Discord instalado e o próprio TelaLeve. Discord em uma aba não é separado do áudio das outras abas do mesmo navegador. O recurso depende de Windows com suporte à captura por processo; Windows 11 é a referência.
 
-**Áudio no Mac:** a versão 0.13.0 recebe o áudio das transmissões, mas transmite tela e webcam sem áudio. O isolamento de áudio ainda é exclusivo do Windows.
+**Áudio no Mac (experimental):** no macOS 14.2 ou posterior, marque **Compartilhar áudio** no seletor e autorize a captura de áudio do sistema quando solicitado. Janela captura seu aplicativo e subprocessos; tela inteira exclui o Discord instalado e o próprio TelaLeve. Outras abas/janelas do mesmo aplicativo não são separadas. O recurso ainda precisa de validação em Mac físico; veja [instruções e limites do Mac](docs/MACOS.md).
 
 ## Atualizar o aplicativo
 
@@ -63,4 +63,4 @@ Você só precisa do `.exe` ou `.dmg` do seu computador. `latest.yml`, `TelaLeve
 
 Os arquivos **Source code (zip)** e **Source code (tar.gz)** aparecem automaticamente no GitHub e **não instalam o TelaLeve**. Este repositório guarda os instaladores e a documentação; o fonte completo está em um repositório privado separado.
 
-As versões antigas permanecem disponíveis no [histórico de releases](https://github.com/MuriloBalancieri/telaleve-releases/releases). Prefira a mais recente. Consulte os [testes e limites da versão 0.13.0](docs/VALIDACAO-0.13.0.md) e a [licença](LICENSE).
+As versões antigas permanecem disponíveis no [histórico de releases](https://github.com/MuriloBalancieri/telaleve-releases/releases). Prefira a mais recente. Consulte os [testes e limites da versão 0.14.0](docs/VALIDACAO-0.14.0.md) e a [licença](LICENSE).
