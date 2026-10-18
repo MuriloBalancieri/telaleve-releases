@@ -2,6 +2,10 @@
 
 Os pacotes abaixo foram preparados em 17/10/2026 e arquivados no GitHub posteriormente. Os arquivos de versões anteriores são preservados; as tags deste repositório identificam distribuições, sem reconstruir um histórico de commits do aplicativo.
 
+## [0.14.0 — Áudio isolado no Mac](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.14.0)
+
+Captura nativa experimental por aplicativo no macOS 14.2+, com exclusão do Discord instalado na tela inteira. Filtro por lista explícita, conversor estéreo 48 kHz e encerramento em falhas. 29 testes unitários e autoteste nativo de política/conversão; captura real, permissões e desempenho em Mac físico ainda não validados.
+
 ## [0.13.0 — Mac e verificação automática](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.13.0)
 
 DMG/ZIP para Mac Intel e Apple Silicon, verificação automática com download manual no Mac e notificações de versão na bandeja Windows sem abrir Chromium. Fonte preservado em repositório privado. 28 testes passaram em Windows/macOS; instaladores Mac gerados em runner macOS, ainda sem teste físico do usuário ou Developer ID.
