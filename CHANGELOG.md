@@ -2,6 +2,10 @@
 
 Os pacotes abaixo foram preparados em 17/10/2026 e arquivados no GitHub posteriormente. Os arquivos de versões anteriores são preservados; as tags deste repositório identificam distribuições, sem reconstruir um histórico de commits do aplicativo.
 
+## [0.15.2 — Links diretos para a sala](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.15.2)
+
+Copiar link da sala passa a gerar convite HTTPS compacto, sem encurtador ou banco adicional. Sala sem senha inicia a entrada ao abrir o link; senha e aprovação permanecem exigidas. Código anterior disponível numa seção separada. Correção da geração da página para preservar o código minificado e sua integridade. 45 testes unitários e testes de links com/sem senha e aprovação.
+
 ## [0.15.1 — Recuperação da qualidade](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.15.1)
 
 Corrige a realimentação entre estimativa de banda e redução inicial que podia manter a imagem em meia resolução. A qualidade sobe novamente em uma conexão saudável; limites de upload, economia do espectador e Priorizar o jogo permanecem. 41 testes unitários e teste entre aplicativos confirmando retorno a 1080p sem recapturar.
