@@ -6,7 +6,7 @@ Compartilhamento de tela e webcam por P2P. Este repositório público guarda ins
 
 ## Instalar
 
-1. Na release mais recente, baixe **TelaLeve-Setup-0.11.0.exe**.
+1. Na release mais recente, baixe **TelaLeve-Setup-0.12.0.exe**.
 2. Encerre a versão anterior pelo ícone da bandeja e execute o instalador.
 3. Abra o TelaLeve pelo atalho e crie uma sala ou entre com um convite.
 4. Compartilhe tela e/ou webcam somente quando quiser.
@@ -19,7 +19,7 @@ O aplicativo instalado procura versões ao abrir e periodicamente enquanto está
 
 As atualizações exigem uma assinatura Ed25519 reconhecida pelo app e conferência de tamanho/SHA-512, inclusive para instalador em cache. Não é necessário token ou conta GitHub para baixar. A assinatura de atualização é independente de Authenticode: esta prévia ainda pode aparecer como editor desconhecido no Windows.
 
-O ZIP **TelaLeve-0.11.0-Windows.zip** é uma alternativa portátil e não recebe atualização automática. Não use os ZIPs “Source code” gerados automaticamente pelo GitHub para instalar: eles contêm apenas esta documentação.
+O ZIP **TelaLeve-0.12.0-Windows.zip** é uma alternativa portátil e não recebe atualização automática. Não use os ZIPs “Source code” gerados automaticamente pelo GitHub para instalar: eles contêm apenas esta documentação.
 
 ## Celular e navegador
 
@@ -33,10 +33,17 @@ As versões anteriores permanecem em Releases, com suas notas e arquivos origina
 
 Cada release inclui **SHA256SUMS.txt**. A partir da 0.10, EXE, blockmap, latest.yml e TelaLeve-update.json são produzidos juntos para atualização do app instalado. Os testes e limites de cada entrega estão registrados em suas notas e relatórios.
 
-## Inicialização e áudio (0.11)
+## Inicialização e áudio (0.12)
 
 Na engrenagem do app instalado, ative **Iniciar com o Windows em segundo plano**. A opção vem desligada. Inicia somente a bandeja leve, sem motor de vídeo, sala ou captura. Desativar/desinstalar remove a entrada; atualizar preserva a escolha.
 
-Na engrenagem do seletor, marque **Compartilhar áudio do computador** antes de transmitir a tela. É o som da saída padrão do Windows, inclusive Discord se estiver na mesma saída; não é áudio exclusivo de uma janela. Deixe desligado ou use outra saída para o Discord se quiser evitar eco. Webcam não captura microfone.
+Na engrenagem do seletor de transmissão, marque **Compartilhar áudio**:
 
-Quem assiste clica **Ouvir** e ajusta o volume em cada transmissão. O transmissor pode silenciar apenas o áudio; pausar tela pausa som e imagem. No navegador, capturar áudio depende da fonte e do seletor oferecido pelo sistema. Atualize todos os participantes para usar os controles de som.
+- **Aplicativos:** áudio do aplicativo da janela escolhida e seus subprocessos. Outras janelas/abas do mesmo programa podem compartilhar esse áudio.
+- **Tela inteira:** mistura os aplicativos permitidos e exclui o **Discord instalado** (incluindo Stable/PTB/Canary e novas instâncias) e o próprio TelaLeve. Seu som local continua normal.
+
+O filtro é nativo do app Windows. Discord em uma aba não pode ser separado do restante do áudio do mesmo navegador. Use o Discord instalado para essa proteção. Navegadores/Mac recebem as transmissões normalmente, mas, ao transmitir, dependem do seletor do sistema e não aplicam esse filtro Windows.
+
+Não captura microfone, grava áudio, instala drivers ou altera dispositivos. Se o isolamento falhar, o som é interrompido sem retornar à captura geral. A API exige Windows compatível com loopback por processo; Windows 11 é a referência. Sons do sistema sem PID e aplicativos protegidos podem não ser incluídos na mixagem. Limite de 24 processos de áudio.
+
+Quem assiste clica **Ouvir** e ajusta o volume por transmissão. O transmissor pode silenciar só o som ou pausar áudio e vídeo juntos. Atualize o TelaLeve em cada PC que for transmitir para usar o novo isolamento. Webcam continua sem microfone.
