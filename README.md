@@ -6,13 +6,13 @@ Compartilhe sua tela e webcam com seus amigos. Para usar o aplicativo, baixe **s
 
 ## Qual arquivo baixar?
 
-Downloads da versão **0.15.1**:
+Downloads da versão **0.15.2**:
 
 | Seu computador | Download |
 | --- | --- |
-| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.1/TelaLeve-Setup-0.15.1.exe) |
-| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.1/TelaLeve-0.15.1-mac-arm64.dmg) |
-| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.1/TelaLeve-0.15.1-mac-x64.dmg) |
+| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.2/TelaLeve-Setup-0.15.2.exe) |
+| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.2/TelaLeve-0.15.2-mac-arm64.dmg) |
+| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.2/TelaLeve-0.15.2-mac-x64.dmg) |
 
 No Mac, abra **menu Apple → Sobre Este Mac**. Se aparecer **Chip Apple M…**, escolha Apple Silicon. Se aparecer **Processador Intel**, escolha Intel.
 
@@ -63,7 +63,7 @@ Você só precisa do `.exe` ou `.dmg` do seu computador. `latest.yml`, `TelaLeve
 
 Os arquivos **Source code (zip)** e **Source code (tar.gz)** aparecem automaticamente no GitHub e **não instalam o TelaLeve**. Este repositório guarda os instaladores e a documentação; o fonte completo está em um repositório privado separado.
 
-As versões antigas permanecem disponíveis no [histórico de releases](https://github.com/MuriloBalancieri/telaleve-releases/releases). Prefira a mais recente. Consulte os [testes e limites da versão 0.15.1](docs/VALIDACAO-0.15.1.md) e a [licença](LICENSE).
+As versões antigas permanecem disponíveis no [histórico de releases](https://github.com/MuriloBalancieri/telaleve-releases/releases). Prefira a mais recente. Consulte os [testes e limites da versão 0.15.2](docs/VALIDACAO-0.15.2.md) e a [licença](LICENSE).
 
 ## Novidades da versão 0.15
 
@@ -71,6 +71,12 @@ Modo **Priorizar o jogo**, qualidade gradual, webcam mais leve, reconexão autom
 
 Todos devem atualizar o aplicativo e recarregar a página do navegador para entrar nas novas salas. O convite expira para novas entradas após oito horas; a sala ativa pode continuar. Nas opções, informe seu **upload** para o app reservar margem para o jogo.
 
-P2P continua padrão. Nenhum servidor pago foi configurado. TURN e SFU próprios são opcionais: [instruções](docs/SERVIDORES-OPCIONAIS.md). [O que foi efetivamente testado](docs/VALIDACAO-0.15.1.md). Jogos reais com 1/3/5/10 espectadores, iPhone/Safari físico e Mac físico ainda precisam de validação.
+P2P continua padrão. Nenhum servidor pago foi configurado. TURN e SFU próprios são opcionais: [instruções](docs/SERVIDORES-OPCIONAIS.md). [O que foi efetivamente testado](docs/VALIDACAO-0.15.2.md). Jogos reais com 1/3/5/10 espectadores, iPhone/Safari físico e Mac físico ainda precisam de validação.
 
-Correção 0.15.1: resolvido o caso em que a qualidade ficava presa no início reduzido. Teste entre aplicativos confirmou retorno a 1920 × 1080, teto de 5 Mbps e limite de 30 FPS, sem recapturar. A qualidade recebida ainda depende do perfil e da conexão.
+Correção 0.15.2: resolvido o caso em que a qualidade ficava presa no início reduzido. Teste entre aplicativos confirmou retorno a 1920 × 1080, teto de 5 Mbps e limite de 30 FPS, sem recapturar. A qualidade recebida ainda depende do perfil e da conexão.
+
+## Convidar por link
+
+Crie uma sala e clique em **Copiar link da sala**. Envie o link ao amigo: ele abre no navegador e já tenta entrar. Se houver senha, precisa informá-la; se houver aprovação, aguarda o anfitrião. A entrada não liga tela, webcam nem microfone.
+
+O endereço tem aproximadamente 150 caracteres nas opções padrão, sem encurtador ou servidor novo. Configurações personalizadas podem produzir links maiores. O código anterior continua disponível na seção **Código para versões anteriores**. Aplicativos antigos podem usar esse código ou atualizar para entender o link compacto.
