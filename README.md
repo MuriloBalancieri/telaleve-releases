@@ -1,59 +1,66 @@
-# TelaLeve — Downloads e versões
+# TelaLeve — Baixar e instalar
 
-Compartilhamento de tela e webcam por P2P. Este repositório público guarda instaladores, pacotes e o histórico das distribuições, sem os ZIPs de código-fonte.
+Compartilhe sua tela e webcam com seus amigos. Para usar o aplicativo, baixe **somente o instalador do seu computador**. Não é necessário ter conta no GitHub.
 
-**[Baixar o instalador mais recente](https://github.com/MuriloBalancieri/telaleve-releases/releases/latest)** · **[Histórico completo](https://github.com/MuriloBalancieri/telaleve-releases/releases)** · **[Mudanças por versão](CHANGELOG.md)**
+**[Abrir a versão mais recente](https://github.com/MuriloBalancieri/telaleve-releases/releases/latest)** · [Ver todas as versões](https://github.com/MuriloBalancieri/telaleve-releases/releases) · [Histórico de mudanças](CHANGELOG.md)
 
-## Instalar
+## Qual arquivo baixar?
 
-1. Na release mais recente, baixe **TelaLeve-Setup-0.13.0.exe**.
-2. Encerre a versão anterior pelo ícone da bandeja e execute o instalador.
-3. Abra o TelaLeve pelo atalho e crie uma sala ou entre com um convite.
-4. Compartilhe tela e/ou webcam somente quando quiser.
+Downloads da versão **0.13.0**:
 
-A instalação é por usuário, com atalhos e desinstalador. Não precisa instalar Node.js. Quem usava o ZIP precisa instalar uma vez para receber atualizações automáticas.
+| Seu computador | Download |
+| --- | --- |
+| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.13.0/TelaLeve-Setup-0.13.0.exe) |
+| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.13.0/TelaLeve-0.13.0-mac-arm64.dmg) |
+| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.13.0/TelaLeve-0.13.0-mac-x64.dmg) |
 
-## Atualizações automáticas
+No Mac, abra **menu Apple → Sobre Este Mac**. Se aparecer **Chip Apple M…**, escolha Apple Silicon. Se aparecer **Processador Intel**, escolha Intel.
 
-O aplicativo instalado procura versões ao abrir e periodicamente enquanto está aberto. Procura e download são adiados durante salas. Uma atualização pronta é instalada ao sair, ou pelo botão **Reiniciar e atualizar** nas opções. Se fechar para a bandeja com uma atualização pronta, somente a bandeja é reaberta após instalar. As preferências são preservadas.
+## Instalar no Windows
 
-As atualizações exigem uma assinatura Ed25519 reconhecida pelo app e conferência de tamanho/SHA-512, inclusive para instalador em cache. Não é necessário token ou conta GitHub para baixar. A assinatura de atualização é independente de Authenticode: esta prévia ainda pode aparecer como editor desconhecido no Windows.
+1. Baixe o instalador `.exe` acima.
+2. Se o TelaLeve já estiver aberto, escolha **Sair do TelaLeve** no ícone perto do relógio.
+3. Abra o instalador e siga as instruções.
+4. Inicie o TelaLeve pelo atalho criado.
 
-O ZIP **TelaLeve-0.13.0-Windows.zip** é uma alternativa portátil e não recebe atualização automática. Não use os ZIPs “Source code” gerados automaticamente pelo GitHub para instalar: eles contêm apenas esta documentação.
+O aplicativo instala para seu usuário. Não é necessário instalar Node.js ou outras ferramentas. O instalador ainda não tem certificado comercial de editor e o Windows pode exibir um aviso; confira a origem do download antes de decidir continuar.
 
-## Celular e navegador
+## Instalar no Mac
 
-Dentro da sala, clique em **Entrar pelo celular** e envie o link privado ou QR Code. A página é **https://telaleve-p2p.pages.dev/**. Ela não lista salas: o convite é necessário. O vídeo continua P2P; algumas redes restritivas podem precisar de TURN, não incluído no app.
+1. Baixe o `.dmg` correspondente ao seu processador.
+2. Abra o arquivo e arraste **TelaLeve** para **Aplicativos**.
+3. Abra o TelaLeve pela pasta Aplicativos.
+4. Quando solicitado, permita **Gravação de Tela** e **Câmera** em **Ajustes do Sistema → Privacidade e Segurança**. Reabra o app se o sistema pedir.
 
-A sala permite anfitrião e dez convidados. Cada pessoa pode assistir até duas imagens. A captura começa desligada. Na 0.11, você pode iniciar na bandeja com o Windows e compartilhar áudio do computador opcionalmente. Mac nativo, celulares físicos e várias operadoras ainda precisam de validação completa.
+Esta versão tem assinatura local ad hoc, sem certificado Developer ID e sem notarização Apple. Se o macOS bloquear a abertura e você reconhecer o download deste repositório, confira **Ajustes do Sistema → Privacidade e Segurança → Abrir Mesmo**, quando disponível.
 
-## Histórico e integridade
+## Começar a usar
 
-As versões anteriores permanecem em Releases, com suas notas e arquivos originais. As tags identificam distribuições, não reconstroem commits históricos do código-fonte. Prefira a versão mais recente: os protocolos e recursos variam entre versões.
+Abra o aplicativo e escolha **Criar sala** ou **Entrar com convite**. Dentro da sala, selecione a janela, a tela ou a webcam que deseja transmitir. Tela e webcam podem funcionar ao mesmo tempo. Nenhuma captura começa antes da sua confirmação.
 
-Cada release inclui **SHA256SUMS.txt**. A partir da 0.10, EXE, blockmap, latest.yml e TelaLeve-update.json são produzidos juntos para atualização do app instalado. Os testes e limites de cada entrega estão registrados em suas notas e relatórios.
+A sala permite o anfitrião e até dez convidados. Cada pessoa pode assistir até duas fontes simultaneamente. A conversa por voz pode continuar no Discord.
 
-## Inicialização e áudio (0.12)
+**Áudio no Windows:** marque **Compartilhar áudio** no seletor de transmissão. Ao escolher uma janela, o app captura o áudio daquele aplicativo, podendo incluir outras janelas/abas dele. Ao escolher a tela inteira, exclui o Discord instalado e o próprio TelaLeve. Discord em uma aba não é separado do áudio das outras abas do mesmo navegador. O recurso depende de Windows com suporte à captura por processo; Windows 11 é a referência.
 
-Na engrenagem do app instalado, ative **Iniciar com o Windows em segundo plano**. A opção vem desligada. Inicia somente a bandeja leve, sem motor de vídeo, sala ou captura. Desativar/desinstalar remove a entrada; atualizar preserva a escolha.
+**Áudio no Mac:** a versão 0.13.0 recebe o áudio das transmissões, mas transmite tela e webcam sem áudio. O isolamento de áudio ainda é exclusivo do Windows.
 
-Na engrenagem do seletor de transmissão, marque **Compartilhar áudio**:
+## Atualizar o aplicativo
 
-- **Aplicativos:** áudio do aplicativo da janela escolhida e seus subprocessos. Outras janelas/abas do mesmo programa podem compartilhar esse áudio.
-- **Tela inteira:** mistura os aplicativos permitidos e exclui o **Discord instalado** (incluindo Stable/PTB/Canary e novas instâncias) e o próprio TelaLeve. Seu som local continua normal.
+O app verifica novas versões ao iniciar e a cada quatro horas, adiando a verificação durante uma sala.
 
-O filtro é nativo do app Windows. Discord em uma aba não pode ser separado do restante do áudio do mesmo navegador. Use o Discord instalado para essa proteção. Navegadores/Mac recebem as transmissões normalmente, mas, ao transmitir, dependem do seletor do sistema e não aplicam esse filtro Windows.
+- **Windows instalado:** a atualização é baixada e autenticada automaticamente fora de salas. Quando estiver pronta, use **Opções → Reiniciar e atualizar** ou saia do aplicativo para instalar. A bandeja também avisa sobre novas versões quando o motor estiver fechado. Para procurar imediatamente, use **Opções → Procurar atualização**.
+- **Mac:** o app avisa e oferece **Baixar instalador do Mac**. Saia do app, abra o novo DMG e substitua TelaLeve em Aplicativos. A instalação da atualização é manual nesta distribuição.
 
-Não captura microfone, grava áudio, instala drivers ou altera dispositivos. Se o isolamento falhar, o som é interrompido sem retornar à captura geral. A API exige Windows compatível com loopback por processo; Windows 11 é a referência. Sons do sistema sem PID e aplicativos protegidos podem não ser incluídos na mixagem. Limite de 24 processos de áudio.
+## Entrar pelo celular ou navegador
 
-Quem assiste clica **Ouvir** e ajusta o volume por transmissão. O transmissor pode silenciar só o som ou pausar áudio e vídeo juntos. Atualize o TelaLeve em cada PC que for transmitir para usar o novo isolamento. Webcam continua sem microfone.
+Quem está na sala pode usar **Entrar pelo celular** para compartilhar o link ou QR Code. Abra esse convite no navegador; não precisa instalar nada no celular. A página é [telaleve-p2p.pages.dev](https://telaleve-p2p.pages.dev/) e precisa do convite para entrar.
 
-## Mac e verificação automática (0.13)
+O vídeo é enviado por P2P. Algumas redes podem exigir um servidor TURN, que não está incluído nesta distribuição.
 
-Agora há DMG para **Apple Silicon** (M1 ou posterior, arm64) e **Intel** (x64), além dos ZIPs correspondentes, nos arquivos desta versão. Arraste TelaLeve para Aplicativos. Veja **MACOS.md** na release para permissões e abertura de um aplicativo com assinatura local ad hoc, sem Developer ID ou notarização Apple.
+## E os outros arquivos da release?
 
-O Mac transmite tela e webcam juntas, sem áudio de saída; recebe áudio normalmente dos outros participantes. O filtro de áudio do Discord permanece exclusivo do Windows. O consumo ocioso no Mac é maior, pois utiliza Electron na barra de menus.
+Você só precisa do `.exe` ou `.dmg` do seu computador. `latest.yml`, `TelaLeve-update.json` e `.exe.blockmap` são arquivos usados pelo mecanismo de atualização. `SHA256SUMS.txt` permite conferir a integridade dos downloads, se desejar.
 
-O app verifica versões automaticamente ao iniciar e a cada quatro horas, adiando em salas. No Mac avisa e oferece o instalador da arquitetura correta; a substituição em Aplicativos é manual. Atualização instalada automaticamente no Mac depende de assinatura Apple, ainda não configurada.
+Os arquivos **Source code (zip)** e **Source code (tar.gz)** aparecem automaticamente no GitHub e **não instalam o TelaLeve**. Este repositório guarda os instaladores e a documentação; o fonte completo está em um repositório privado separado.
 
-No Windows instalado, a bandeja leve também procura versões quando o motor está fechado. Ela só avisa, sem carregar Chromium. Abrir o app mantém a atualização autenticada por Ed25519 e SHA-512 e instalação ao sair.
+As versões antigas permanecem disponíveis no [histórico de releases](https://github.com/MuriloBalancieri/telaleve-releases/releases). Prefira a mais recente. Consulte os [testes e limites da versão 0.13.0](docs/VALIDACAO-0.13.0.md) e a [licença](LICENSE).
