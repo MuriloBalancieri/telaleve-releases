@@ -6,13 +6,13 @@ Compartilhe sua tela e webcam com seus amigos. Para usar o aplicativo, baixe **s
 
 ## Qual arquivo baixar?
 
-Downloads da versão **0.15.4**:
+Downloads da versão **0.15.5**:
 
 | Seu computador | Download |
 | --- | --- |
-| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.4/TelaLeve-Setup-0.15.4.exe) |
-| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.4/TelaLeve-0.15.4-mac-arm64.dmg) |
-| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.4/TelaLeve-0.15.4-mac-x64.dmg) |
+| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.5/TelaLeve-Setup-0.15.5.exe) |
+| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.5/TelaLeve-0.15.5-mac-arm64.dmg) |
+| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.5/TelaLeve-0.15.5-mac-x64.dmg) |
 
 No Mac, abra **menu Apple → Sobre Este Mac**. Se aparecer **Chip Apple M…**, escolha Apple Silicon. Se aparecer **Processador Intel**, escolha Intel.
 
@@ -83,8 +83,12 @@ O endereço tem aproximadamente 150 caracteres nas opções padrão, sem encurta
 
 ### Abrir a sala no aplicativo
 
-No link do convite, clique em **Abrir no TelaLeve** e confirme a abertura no navegador. Instale ou atualize para **0.15.3**. No Mac, mova o app para **Aplicativos** e abra uma vez. Se preferir, use **Continuar no navegador**. A senha da sala é solicitada no app; câmera e tela ficam desligadas até você escolher compartilhar.
+No link do convite, clique em **Abrir no TelaLeve** e confirme a abertura no navegador. Instale ou atualize para **0.15.5**. No Mac, mova o app para **Aplicativos** e abra uma vez. Se preferir, use **Continuar no navegador**. A senha da sala é solicitada no app; câmera e tela ficam desligadas até você escolher compartilhar.
 
 ### Personalizar as cores
 
 Na versão **0.15.4**, clique em **◐** ao lado da engrenagem, ou abra **Opções de conexão → Personalizar cores**. Escolha uma das seis paletas ou ajuste **Cor de destaque** e **Cor de fundo**. Use **Salvar aparência** para manter; fechar ou Escape cancela a prévia. A escolha vale somente no seu aplicativo e fica salva neste computador.
+
+### O botão não abriu o aplicativo?
+
+Atualize para **0.15.5** e reabra a página do convite. Clique em **Abrir no TelaLeve** e confirme a abertura se o navegador perguntar. Esta versão corrige o endereço normalizado pelo Windows. Se a abertura for recusada pelo navegador, use **Continuar no navegador**.
