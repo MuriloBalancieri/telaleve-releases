@@ -1,3 +1,11 @@
+## 0.15.3 — Abrir no TelaLeve
+
+- Botão na página do convite abre o aplicativo instalado no Windows e Mac.
+- Convite recebido com app fechado ou na bandeja; senha e aprovação respeitadas.
+- Confirmação antes de sair de outra sala; repetir convite mantém a sessão.
+- Alternativa para continuar no navegador e baixar o app.
+- 47 testes unitários e teste integrado com iniciador real do Windows; Mac físico pendente.
+
 # Histórico das distribuições
 
 Os pacotes abaixo foram preparados em 17/10/2026 e arquivados no GitHub posteriormente. Os arquivos de versões anteriores são preservados; as tags deste repositório identificam distribuições, sem reconstruir um histórico de commits do aplicativo.
