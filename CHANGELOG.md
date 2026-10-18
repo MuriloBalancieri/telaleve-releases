@@ -1,3 +1,11 @@
+## 0.15.8 — Apelido e preset salvos
+
+- Último apelido aceito preenchido ao criar ou entrar em salas, inclusive no navegador.
+- Último preset de tela restaurado: modo, resolução, FPS, bitrate e adaptação.
+- Preferências locais por perfil do app ou navegador, sem cadastro ou servidor.
+- Webcam preserva o preset da tela; dados inválidos ou armazenamento bloqueado não impedem usar o app.
+- A fonte e o compartilhamento de áudio continuam dependendo da escolha do usuário.
+
 ## 0.15.7 — Mais fácil de assistir
 
 - Cartões separados para tela e webcam, com nome da pessoa e botões Assistir / Parar de assistir.
