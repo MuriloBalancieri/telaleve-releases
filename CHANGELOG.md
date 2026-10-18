@@ -2,6 +2,10 @@
 
 Os pacotes abaixo foram preparados em 17/10/2026 e arquivados no GitHub posteriormente. Os arquivos de versões anteriores são preservados; as tags deste repositório identificam distribuições, sem reconstruir um histórico de commits do aplicativo.
 
+## [0.15.1 — Recuperação da qualidade](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.15.1)
+
+Corrige a realimentação entre estimativa de banda e redução inicial que podia manter a imagem em meia resolução. A qualidade sobe novamente em uma conexão saudável; limites de upload, economia do espectador e Priorizar o jogo permanecem. 41 testes unitários e teste entre aplicativos confirmando retorno a 1080p sem recapturar.
+
 ## [0.15.0 — Estabilidade, desempenho e controle](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.15.0)
 
 Recuperação de vídeo e sessão sem recapturar, modo Priorizar o jogo, margem de upload, perfil leve de webcam, qualidade gradual e saúde de cada fonte. Apelidos, espectadores, escuta minimizada, diagnóstico sem credenciais, aprovação, bloqueio, expulsão e renovação de convites. P2P padrão e SFU/TURN próprios opcionais, sem contratação de servidores. Convite de oito horas deixa de limitar a duração da sala. 39 testes unitários; integração sintética com dez espectadores e SFU local. Homologação física em jogos, iPhone/Safari e Mac permanece pendente.
