@@ -1,3 +1,11 @@
+## 0.15.5 — Corrigir abertura no aplicativo
+
+- Aceita o endereço com barra acrescentada pela normalização do sistema.
+- Novo endereço local compatível, preservando os convites anteriores.
+- Teste do protocolo registrado no Windows, com senha, bandeja e aprovação.
+- Página do convite atualizada para orientar o uso da versão corrigida.
+- 51 testes unitários; Mac físico e homologação manual de navegadores pendentes.
+
 ## 0.15.4 — Cores do seu aplicativo
 
 - Seis paletas, incluindo tema claro, e cores de destaque e fundo personalizadas.
