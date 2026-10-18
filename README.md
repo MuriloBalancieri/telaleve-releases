@@ -6,15 +6,17 @@ Compartilhe sua tela e webcam com seus amigos. Para usar o aplicativo, baixe **s
 
 Na sala, cada tela ou webcam tem um cartão com o nome da pessoa. Clique em **Assistir** para abrir e em **Parar de assistir** para fechar. Você pode assistir duas transmissões ao mesmo tempo.
 
+O TelaLeve lembra o último apelido usado e o preset da última transmissão de tela: modo, resolução, FPS, bitrate e adaptação. Essas escolhas ficam salvas no seu computador ou navegador.
+
 ## Qual arquivo baixar?
 
-Downloads da versão **0.15.7**:
+Downloads da versão **0.15.8**:
 
 | Seu computador | Download |
 | --- | --- |
-| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.7/TelaLeve-Setup-0.15.7.exe) |
-| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.7/TelaLeve-0.15.7-mac-arm64.dmg) |
-| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.7/TelaLeve-0.15.7-mac-x64.dmg) |
+| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.8/TelaLeve-Setup-0.15.8.exe) |
+| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.8/TelaLeve-0.15.8-mac-arm64.dmg) |
+| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.15.8/TelaLeve-0.15.8-mac-x64.dmg) |
 
 No Mac, abra **menu Apple → Sobre Este Mac**. Se aparecer **Chip Apple M…**, escolha Apple Silicon. Se aparecer **Processador Intel**, escolha Intel.
 
@@ -97,4 +99,4 @@ Atualize para **0.15.5** e reabra a página do convite. Clique em **Abrir no Tel
 
 ### Tela cheia e janela flutuante
 
-Atualize para **0.15.7**. Na transmissão, use **Ampliar** para tela cheia; **Esc** ou **Sair da tela cheia** volta à sala. **Picture-in-Picture** abre uma janela flutuante, inclusive com o app minimizado. O botão PiP aparece onde há suporte. O áudio mantém sua escolha de Ouvir/Silenciar e volume.
+Atualize para **0.15.8**. Na transmissão, use **Ampliar** para tela cheia; **Esc** ou **Sair da tela cheia** volta à sala. **Picture-in-Picture** abre uma janela flutuante, inclusive com o app minimizado. O botão PiP aparece onde há suporte. O áudio mantém sua escolha de Ouvir/Silenciar e volume.
