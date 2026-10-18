@@ -2,6 +2,10 @@
 
 Os pacotes abaixo foram preparados em 17/10/2026 e arquivados no GitHub posteriormente. Os arquivos de versões anteriores são preservados; as tags deste repositório identificam distribuições, sem reconstruir um histórico de commits do aplicativo.
 
+## [0.13.0 — Mac e verificação automática](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.13.0)
+
+DMG/ZIP para Mac Intel e Apple Silicon, verificação automática com download manual no Mac e notificações de versão na bandeja Windows sem abrir Chromium. Fonte preservado em repositório privado. 28 testes passaram em Windows/macOS; instaladores Mac gerados em runner macOS, ainda sem teste físico do usuário ou Developer ID.
+
 ## [0.12.0 — Áudio de aplicativo e tela sem Discord](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.12.0)
 
 Áudio da janela usa captura nativa por árvore de processos do aplicativo escolhido. Tela inteira mistura sessões permitidas e exclui Discord instalado (incluindo novas instâncias) e o próprio TelaLeve. Sem driver, gravação ou mudança do som local. Descoberta separada da mixagem, temporização de áudio do Windows, buffers limitados e encerramento ao sair.
