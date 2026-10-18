@@ -6,7 +6,7 @@ Compartilhamento de tela e webcam por P2P. Este repositório público guarda ins
 
 ## Instalar
 
-1. Na release mais recente, baixe **TelaLeve-Setup-0.12.0.exe**.
+1. Na release mais recente, baixe **TelaLeve-Setup-0.13.0.exe**.
 2. Encerre a versão anterior pelo ícone da bandeja e execute o instalador.
 3. Abra o TelaLeve pelo atalho e crie uma sala ou entre com um convite.
 4. Compartilhe tela e/ou webcam somente quando quiser.
@@ -19,7 +19,7 @@ O aplicativo instalado procura versões ao abrir e periodicamente enquanto está
 
 As atualizações exigem uma assinatura Ed25519 reconhecida pelo app e conferência de tamanho/SHA-512, inclusive para instalador em cache. Não é necessário token ou conta GitHub para baixar. A assinatura de atualização é independente de Authenticode: esta prévia ainda pode aparecer como editor desconhecido no Windows.
 
-O ZIP **TelaLeve-0.12.0-Windows.zip** é uma alternativa portátil e não recebe atualização automática. Não use os ZIPs “Source code” gerados automaticamente pelo GitHub para instalar: eles contêm apenas esta documentação.
+O ZIP **TelaLeve-0.13.0-Windows.zip** é uma alternativa portátil e não recebe atualização automática. Não use os ZIPs “Source code” gerados automaticamente pelo GitHub para instalar: eles contêm apenas esta documentação.
 
 ## Celular e navegador
 
@@ -47,3 +47,13 @@ O filtro é nativo do app Windows. Discord em uma aba não pode ser separado do 
 Não captura microfone, grava áudio, instala drivers ou altera dispositivos. Se o isolamento falhar, o som é interrompido sem retornar à captura geral. A API exige Windows compatível com loopback por processo; Windows 11 é a referência. Sons do sistema sem PID e aplicativos protegidos podem não ser incluídos na mixagem. Limite de 24 processos de áudio.
 
 Quem assiste clica **Ouvir** e ajusta o volume por transmissão. O transmissor pode silenciar só o som ou pausar áudio e vídeo juntos. Atualize o TelaLeve em cada PC que for transmitir para usar o novo isolamento. Webcam continua sem microfone.
+
+## Mac e verificação automática (0.13)
+
+Agora há DMG para **Apple Silicon** (M1 ou posterior, arm64) e **Intel** (x64), além dos ZIPs correspondentes, nos arquivos desta versão. Arraste TelaLeve para Aplicativos. Veja **MACOS.md** na release para permissões e abertura de um aplicativo com assinatura local ad hoc, sem Developer ID ou notarização Apple.
+
+O Mac transmite tela e webcam juntas, sem áudio de saída; recebe áudio normalmente dos outros participantes. O filtro de áudio do Discord permanece exclusivo do Windows. O consumo ocioso no Mac é maior, pois utiliza Electron na barra de menus.
+
+O app verifica versões automaticamente ao iniciar e a cada quatro horas, adiando em salas. No Mac avisa e oferece o instalador da arquitetura correta; a substituição em Aplicativos é manual. Atualização instalada automaticamente no Mac depende de assinatura Apple, ainda não configurada.
+
+No Windows instalado, a bandeja leve também procura versões quando o motor está fechado. Ela só avisa, sem carregar Chromium. Abrir o app mantém a atualização autenticada por Ed25519 e SHA-512 e instalação ao sair.
