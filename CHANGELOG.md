@@ -1,3 +1,13 @@
+## 0.16.0 — Administradores e transferência de dono
+
+- O dono pode conceder/remover administrador; administradores podem moderar entradas e membros comuns.
+- Sair transfere a sala a um administrador conectado ou ao membro conectado mais antigo.
+- Capturas e conexões P2P dos participantes que ficam são preservadas.
+- Novo convite distribuído automaticamente, mantendo senha, bloqueio e aprovação.
+- Encerrar para todos separado da saída normal.
+- Sair do aplicativo desktop aguarda a transferência. No navegador, use Sair da sala.
+- Protocolo 8: todos precisam atualizar o app ou recarregar o webapp.
+
 ## 0.15.9 — Volume até 300%
 
 - Controle de volume de 0% a 300%, com porcentagem ao lado do slider.
