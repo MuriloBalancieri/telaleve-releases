@@ -1,3 +1,11 @@
+## 0.15.9 — Volume até 300%
+
+- Controle de volume de 0% a 300%, com porcentagem ao lado do slider.
+- Amplificação real acima de 100%, independente por transmissão.
+- Silenciar e reconectar preservam o volume escolhido, sem duplicar o som.
+- Processamento criado somente ao ouvir, suspenso sem áudio ou silenciado e encerrado ao remover a imagem.
+- Navegadores sem suporte à amplificação informam a limitação a 100%.
+
 ## 0.15.8 — Apelido e preset salvos
 
 - Último apelido aceito preenchido ao criar ou entrar em salas, inclusive no navegador.
