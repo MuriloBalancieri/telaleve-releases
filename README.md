@@ -10,21 +10,21 @@ O TelaLeve lembra o último apelido usado e o preset da última transmissão de 
 
 Nas transmissões com som, clique em **Ouvir** e ajuste o volume de **0% a 300%**. A porcentagem aparece ao lado do controle e vale só para a imagem que você está assistindo.
 
-**Atualize todos os aplicativos ou recarregue o webapp:** a versão 0.16.0 usa um novo protocolo de sala.
+**Atualize todos os aplicativos ou recarregue o webapp:** a versão 0.17.0 usa um novo protocolo de sala.
 
 No painel **Administração da sala**, o dono pode clicar em **Tornar administrador**. Ao usar **Sair da sala**, a sala passa primeiro a um administrador conectado e, se não houver, ao membro conectado que entrou há mais tempo. O novo link aparece automaticamente para quem ficou. **Encerrar para todos** é uma ação separada.
 
-Para transferir no navegador, use o botão **Sair da sala**. Fechamento abrupto da aba/processo ou perda de internet não realizam a saída coordenada. No aplicativo desktop, **Sair do TelaLeve** também aguarda a transferência.
+Fechar a aba ou interromper o processo também permite recuperar a sala automaticamente. Um administrador tem prioridade, seguido do participante mais antigo conectado. Essa recuperação mantém o link e o antigo dono tenta voltar como participante se sua internet retornar. É necessário que ao menos um participante tenha sincronizado a recuperação e que a sinalização esteja acessível. Pode haver uma pausa enquanto a falha é detectada; não há servidor pago novo. Se usar sinalização local e desligar o computador que a executa, esse servidor também cai. No desktop, **Sair do TelaLeve** continua aguardando a saída coordenada.
 
 ## Qual arquivo baixar?
 
-Downloads da versão **0.16.0**:
+Downloads da versão **0.17.0**:
 
 | Seu computador | Download |
 | --- | --- |
-| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.16.0/TelaLeve-Setup-0.16.0.exe) |
-| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.16.0/TelaLeve-0.16.0-mac-arm64.dmg) |
-| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.16.0/TelaLeve-0.16.0-mac-x64.dmg) |
+| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.17.0/TelaLeve-Setup-0.17.0.exe) |
+| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.17.0/TelaLeve-0.17.0-mac-arm64.dmg) |
+| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.17.0/TelaLeve-0.17.0-mac-x64.dmg) |
 
 No Mac, abra **menu Apple → Sobre Este Mac**. Se aparecer **Chip Apple M…**, escolha Apple Silicon. Se aparecer **Processador Intel**, escolha Intel.
 
@@ -107,4 +107,4 @@ Atualize para **0.15.5** e reabra a página do convite. Clique em **Abrir no Tel
 
 ### Tela cheia e janela flutuante
 
-Atualize para **0.16.0**. Na transmissão, use **Ampliar** para tela cheia; **Esc** ou **Sair da tela cheia** volta à sala. **Picture-in-Picture** abre uma janela flutuante, inclusive com o app minimizado. O botão PiP aparece onde há suporte. O áudio mantém sua escolha de Ouvir/Silenciar e volume.
+Atualize para **0.17.0**. Na transmissão, use **Ampliar** para tela cheia; **Esc** ou **Sair da tela cheia** volta à sala. **Picture-in-Picture** abre uma janela flutuante, inclusive com o app minimizado. O botão PiP aparece onde há suporte. O áudio mantém sua escolha de Ouvir/Silenciar e volume.
