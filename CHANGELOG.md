@@ -1,3 +1,12 @@
+
+
+## 0.17.0
+
+- Recuperação automática ao fechar a página, interromper o processo ou perder a conexão do dono: administrador primeiro, depois membro conectado mais antigo.
+- Registro exclusivo da sala na sinalização evita que uma falha isolada de convidado o transforme em outro dono. O dono que perde a sinalização deixa de administrar e tenta voltar como participante.
+- Mesmo link na recuperação automática; tela e webcam entre sobreviventes continuam. Corrigida também a lista transitória durante reconexões simultâneas para manter seleções e autorizações de vídeo.
+- Estado de recuperação limitado e guardado somente em memória, sem senha em texto. Expulsão renova credenciais de recuperação dos demais participantes.
+- Protocolo 9: atualize todos os apps e recarregue o site. Sem servidor pago novo. Dependência de sinalização acessível e participantes sincronizados; Mac físico/iPhone continuam pendentes de homologação.
 ## 0.16.0 — Administradores e transferência de dono
 
 - O dono pode conceder/remover administrador; administradores podem moderar entradas e membros comuns.
