@@ -1,3 +1,11 @@
+## 0.18.0
+
+- Salas permanentes com link fixo e lista salva no app e navegador, mesmo quando todos estão offline.
+- Qualquer membro salvo pode reabrir a chamada; criador ausente não impede entrada. Fontes continuam desligadas até confirmação.
+- Cadastro no Cloudflare D1 gratuito; mídia segue P2P. Associação por aparelho com token próprio cifrado localmente e hash no servidor.
+- Recuperação após todos saírem, espera após crash, capacidade, cotas e proteção contra abuso. Administração da sessão diferenciada da sala salva.
+- Protocolo 9 mantido; convites permanentes exigem app 0.18 ou site atualizado. Mac físico e iPhone/Safari seguem pendentes.
+
 
 
 ## 0.17.0
