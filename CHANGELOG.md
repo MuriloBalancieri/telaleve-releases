@@ -1,3 +1,11 @@
+## 0.18.1
+
+- Corrigido launcher Windows para aceitar e encaminhar convites permanentes ao app, a frio e pela bandeja já aberta.
+- Página do convite oferece abrir no app ou continuar no navegador, sem entrar automaticamente em uma chamada pela web.
+- Aviso sonoro sintetizado e visual para novas telas/webcams; atualizações de qualidade não repetem o aviso. Contexto suspenso após a reprodução e liberado ao sair.
+- Compartilhar áudio marcado por padrão em fontes compatíveis; é possível desmarcar. Webcam continua sem microfone e captura exige confirmação.
+- 95 testes unitários e teste integrado Windows/Chromium. Mac físico/iPhone/Safari e confirmação de protocolo em Chrome/Firefox reais seguem sem homologação.
+
 ## 0.18.0
 
 - Salas permanentes com link fixo e lista salva no app e navegador, mesmo quando todos estão offline.
