@@ -1,3 +1,11 @@
+## 0.18.2
+
+- Botão Focar nas lives amplia uma ou duas transmissões na janela, ocultando os painéis da sala.
+- Tela cheia conjunta, retorno por Esc/Voltar à sala, organização lado a lado ou empilhada conforme a janela.
+- Players, som, volume, PiP e conexões existentes preservados; sem novas capturas nem decodificadores extras.
+- Navegação de teclado isolada no foco e restauração da interface ao terminar a última live ou sair da sala.
+- 100 testes unitários e integração Windows/Chromium com duas mídias sintéticas. Mac físico/iPhone/Safari seguem sem homologação.
+
 ## 0.18.1
 
 - Corrigido launcher Windows para aceitar e encaminhar convites permanentes ao app, a frio e pela bandeja já aberta.
