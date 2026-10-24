@@ -1,3 +1,11 @@
+## 0.19.0
+
+- Painel de administração do serviço com identidade GitHub estável e login cifrado no perfil do computador.
+- Listagem de salas permanentes e sessões temporárias anunciadas por versões novas; entrada administrativa identificada aos participantes.
+- Autorizações de entrada temporárias, uso único e vinculadas à sala; sem senha mestra nos instaladores.
+- Edição privada do proprietário usa a mesma instalação e atualizador público; o acesso não depende da versão instalada.
+- 106 testes automatizados, integração Windows com reconexão e validação real de login GitHub/entrada no serviço publicado. Mac Intel/Apple Silicon compilados e pacotes conferidos; Mac físico e iPhone/Safari sem homologação nesta etapa.
+
 ## 0.18.2
 
 - Botão Focar nas lives amplia uma ou duas transmissões na janela, ocultando os painéis da sala.
