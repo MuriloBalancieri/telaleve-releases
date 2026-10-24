@@ -10,15 +10,21 @@ O TelaLeve lembra o último apelido usado e o preset da última transmissão de 
 
 Nas transmissões com som, clique em **Ouvir** e ajuste o volume de **0% a 300%**. A porcentagem aparece ao lado do controle e vale só para a imagem que você está assistindo.
 
-**Atualize todos os aplicativos ou recarregue o webapp:** as salas permanentes exigem 0.18.1 ou posterior; o protocolo de mídia continua 9.
+**Atualize todos os aplicativos ou recarregue o webapp:** as salas permanentes exigem 0.18.2 ou posterior; o protocolo de mídia continua 9.
 
 No painel **Administração da sala**, o dono pode clicar em **Tornar administrador**. Ao usar **Sair da sala**, a sala passa primeiro a um administrador conectado e, se não houver, ao membro conectado que entrou há mais tempo. O novo link aparece automaticamente para quem ficou. **Encerrar para todos** é uma ação separada.
 
 Fechar a aba ou interromper o processo também permite recuperar a sala automaticamente. Um administrador tem prioridade, seguido do participante mais antigo conectado. Essa recuperação mantém o link e o antigo dono tenta voltar como participante se sua internet retornar. É necessário que ao menos um participante tenha sincronizado a recuperação e que a sinalização esteja acessível. Pode haver uma pausa enquanto a falha é detectada; não há servidor pago novo. Se usar sinalização local e desligar o computador que a executa, esse servidor também cai. No desktop, **Sair do TelaLeve** continua aguardando a saída coordenada.
 
+## Amplie as duas lives
+
+Selecione as transmissões e clique em **Focar nas lives**. As imagens ocupam a janela: lado a lado em telas largas, empilhadas em janelas estreitas. **Tela cheia** amplia as duas juntas. Use **Voltar à sala** ou Esc para retornar. Em tela cheia, Esc primeiro volta ao foco na janela.
+
+Os controles de som, volume e PiP continuam nos cartões. O foco reaproveita os mesmos vídeos e conexões, sem nova captura ou aumento no limite de duas lives assistidas. Também está disponível no navegador.
+
 ## Convites e avisos da transmissão
 
-Ao abrir o link, escolha **Abrir no TelaLeve** para usar o app ou **Continuar no navegador**. Atualize para 0.18.1: o launcher Windows antigo descartava convites de salas permanentes. O navegador pode pedir confirmação para abrir o app instalado.
+Ao abrir o link, escolha **Abrir no TelaLeve** para usar o app ou **Continuar no navegador**. Atualize para 0.18.2: o launcher Windows antigo descartava convites de salas permanentes. O navegador pode pedir confirmação para abrir o app instalado.
 
 Novas telas e webcams emitem um aviso sonoro curto e uma indicação visual. O navegador pode precisar de uma interação sua para liberar o som. **Compartilhar áudio** vem marcado ao abrir o seletor e pode ser desmarcado antes de transmitir. Webcam continua sem microfone; nenhuma captura começa antes da confirmação.
 
@@ -32,13 +38,13 @@ Mídia P2P com cadastro gratuito no Cloudflare, sujeito às cotas do plano, sem 
 
 ## Qual arquivo baixar?
 
-Downloads da versão **0.18.1**:
+Downloads da versão **0.18.2**:
 
 | Seu computador | Download |
 | --- | --- |
-| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.18.1/TelaLeve-Setup-0.18.1.exe) |
-| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.18.1/TelaLeve-0.18.1-mac-arm64.dmg) |
-| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.18.1/TelaLeve-0.18.1-mac-x64.dmg) |
+| Windows de 64 bits | [Baixar instalador Windows (.exe)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.18.2/TelaLeve-Setup-0.18.2.exe) |
+| Mac com chip Apple Silicon — M1 ou posterior | [Baixar instalador Mac Apple Silicon (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.18.2/TelaLeve-0.18.2-mac-arm64.dmg) |
+| Mac com processador Intel | [Baixar instalador Mac Intel (.dmg)](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.18.2/TelaLeve-0.18.2-mac-x64.dmg) |
 
 No Mac, abra **menu Apple → Sobre Este Mac**. Se aparecer **Chip Apple M…**, escolha Apple Silicon. Se aparecer **Processador Intel**, escolha Intel.
 
@@ -121,4 +127,4 @@ Atualize para **0.15.5** e reabra a página do convite. Clique em **Abrir no Tel
 
 ### Tela cheia e janela flutuante
 
-Atualize para **0.18.1**. Na transmissão, use **Ampliar** para tela cheia; **Esc** ou **Sair da tela cheia** volta à sala. **Picture-in-Picture** abre uma janela flutuante, inclusive com o app minimizado. O botão PiP aparece onde há suporte. O áudio mantém sua escolha de Ouvir/Silenciar e volume.
+Atualize para **0.18.2**. Na transmissão, use **Ampliar** para tela cheia; **Esc** ou **Sair da tela cheia** volta à sala. **Picture-in-Picture** abre uma janela flutuante, inclusive com o app minimizado. O botão PiP aparece onde há suporte. O áudio mantém sua escolha de Ouvir/Silenciar e volume.
