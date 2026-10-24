@@ -10,7 +10,7 @@ O TelaLeve lembra o último apelido usado e o preset da última transmissão de 
 
 Nas transmissões com som, clique em **Ouvir** e ajuste o volume de **0% a 300%**. A porcentagem aparece ao lado do controle e vale só para a imagem que você está assistindo.
 
-**Atualize todos os aplicativos ou recarregue o webapp:** as salas permanentes exigem 0.18.2 ou posterior; o protocolo de mídia continua 9.
+**Atualize todos os aplicativos ou recarregue o webapp:** o painel do serviço exige anfitrião 0.19.0 ou posterior; salas permanentes continuam compatíveis com 0.18.0 ou posterior; o protocolo de mídia continua 9.
 
 No painel **Administração da sala**, o dono pode clicar em **Tornar administrador**. Ao usar **Sair da sala**, a sala passa primeiro a um administrador conectado e, se não houver, ao membro conectado que entrou há mais tempo. O novo link aparece automaticamente para quem ficou. **Encerrar para todos** é uma ação separada.
 
@@ -128,3 +128,9 @@ Atualize para **0.15.5** e reabra a página do convite. Clique em **Abrir no Tel
 ### Tela cheia e janela flutuante
 
 Atualize para **0.18.2**. Na transmissão, use **Ampliar** para tela cheia; **Esc** ou **Sair da tela cheia** volta à sala. **Picture-in-Picture** abre uma janela flutuante, inclusive com o app minimizado. O botão PiP aparece onde há suporte. O áudio mantém sua escolha de Ouvir/Silenciar e volume.
+
+## Administração do serviço
+
+A versão 0.19.0 permite ao proprietário do serviço localizar salas cadastradas e entrar nelas com presença identificada como **Administrador do TelaLeve**. A autorização é vinculada à conta GitHub autorizada; baixar o aplicativo não concede esse privilégio. As salas locais e temporárias abertas apenas em versões antigas não aparecem no cadastro. O limite de participantes e as restrições de rede continuam valendo.
+
+[Validação da versão 0.19.0](docs/VALIDACAO-0.19.0.md).
