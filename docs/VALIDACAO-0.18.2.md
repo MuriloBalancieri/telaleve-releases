@@ -26,29 +26,15 @@ Mac físico, iPhone/Safari e redes diferentes não foram testados. Não há nova
 
 # Versão 0.17.0 — recuperação após fechamento e queda abrupta
 
-A sala agora prepara recuperação em memória nos participantes autenticados, com prioridade de administrador e depois ordem de entrada. Fechar a página usa uma saída sem encerrar todos; crash sem pagehide também pode ser recuperado. O sucessor precisa registrar o mesmo identificador exclusivo no PeerJS antes de assumir. A perda de controle de um único convidado não concede administração enquanto o dono mantém esse registro. Quem perde a sinalização como dono é cercado imediatamente, não tenta reassumir o identificador e retorna como participante quando a conexão permite. O antigo dono pode assumir novamente no futuro pela ordem normal de sucessão.
-
 A recuperação automática mantém o link, senha, aprovação e bloqueio; preserva fontes e chamadas de mídia entre sobreviventes. Em uma saída coordenada pelo botão Sair, o novo controle é preparado antes e o link muda, como na 0.16. Convites vencidos continuam sem admitir novas pessoas. Encerrar para todos permanece separado e encerra os participantes alcançados.
 
-Os participantes autorizados como possíveis sucessores recebem, pelo canal DTLS autenticado, uma cópia limitada do estado de recuperação e um verificador derivado da senha, sem a senha em texto. Essas credenciais equivalem ao poder de administrar a sala e ficam somente na memória; não são colocadas em links, armazenamento local, rosters ou diagnósticos. Expulsar um participante renova as credenciais de retomada dos restantes e o convite. O sal do verificador é mantido ao renovar o convite; o segredo de admissão é renovado. O novo dono consegue validar entradas e renovar convites protegidos sem conhecer a senha em texto.
-
-Limites: a recuperação depende de participantes sincronizados e de uma cópia recebida há menos de dois minutos. Existe espera para detectar a falha e para a sinalização liberar o registro; não é uma troca instantânea nem garantia contra toda partição de rede. Se todos fecharem, não há sala persistente. Nenhum servidor pago foi adicionado. Use sinalização internet: se o PC que executa a sinalização local desligar, esse servidor deixa de estar disponível. O registro exclusivo depende do comportamento do PeerServer compatível; não implementa consenso entre servidores de sinalização independentes. Interromper a internet de todos impede recuperar até a conectividade voltar. SFU próprio passa a P2P, sem distribuir a chave administrativa do servidor; conectividade exclusivamente SFU não está homologada para essa recuperação.
-
 Protocolo 9: todos precisam atualizar o app e recarregar o webapp; versões anteriores são incompatíveis. 80 testes unitários passaram, incluindo credenciais, prioridade, limites, cópia vencida, tempo de reconexão de salas longas e cercamento. Integração Windows/Chromium com mídias sintéticas validou pagehide, crash real dos renderizadores web e desktop, retorno do ex-dono, reconexão concorrente, duas fontes sem recaptura, manutenção de players/chamadas, senha, admissão, expulsão e encerramento. O instalador Windows e a saída normal pelo motor empacotado foram conferidos. Mac Intel/Apple Silicon compilados em CI, com auxiliar de áudio e assinatura ad hoc verificados; não equivale a teste físico. Mac físico e iPhone/Safari continuam sem homologação.
-
-# Versão 0.16.0 — administrador e transferência de dono
-
-Sair da sala passa o controle primeiro a um administrador conectado e depois ao membro conectado com a entrada mais antiga. A ordem é preservada na recuperação de conexão. Só o dono concede ou remove administradores. Administradores podem aprovar entradas, bloquear novas entradas, renovar convites e expulsar membros comuns; não podem remover o dono, conceder cargos ou expulsar outros administradores. Encerrar para todos é uma ação separada, exclusiva do dono.
 
 A transferência prepara o novo controle antes da saída, preservando as identidades e conexões de mídia P2P entre participantes que permanecem. Capturas dos sobreviventes não precisam ser escolhidas de novo. A tela/webcam do dono que saiu são desligadas. Participantes conectados recebem automaticamente o novo convite, e o link anterior deixa de alcançar a sala. Convide novas pessoas com o link atualizado. Senha, bloqueio e aprovação são preservados. As credenciais de recuperação e a senha da sala são enviadas somente ao sucessor escolhido, pelo canal de controle autenticado; nunca fazem parte da lista pública de participantes ou do relatório de diagnóstico. O novo dono precisa desse controle completo para validar novas entradas e renovar convites protegidos.
 
 No aplicativo desktop, Sair da sala e Sair do TelaLeve aguardam a transferência. Fechar pelo X continua minimizando para a bandeja quando há sala ativa. No navegador, o dono deve usar Sair da sala para transferir: fechar a aba, encerrar o processo à força, desligar o computador ou perder a internet abruptamente não fazem uma transferência coordenada. Somente participantes que continuam conectados recebem a migração. Falha de preparação tenta outro candidato; se ninguém assumir, a saída é cancelada para preservar a sala. Sala vazia encerra normalmente.
 
-P2P segue como padrão, sem serviço pago novo. Se a sessão usava SFU próprio, a transferência passa os sobreviventes a P2P para não repassar credenciais administrativas do servidor. Redes que dependem exclusivamente do SFU precisam continuar com o dono original ou dispor de conectividade P2P/TURN. O teste local depende da sinalização local original; use o modo internet para salas independentes do PC inicial.
-
 O protocolo passa a 8. Todos precisam atualizar o aplicativo ou recarregar o webapp; versões anteriores recebem a mensagem de incompatibilidade. O formato de convite e o protocolo registrado no sistema permanecem válidos.
-
-Validação: 72 testes unitários, incluindo limites de sucessão e permissões, e integração com quatro participantes, três transferências, administrador prioritário, mais antigo, retorno do dono original, senha, aprovação e manutenção de capturas/players/conexões. Testes de transmissão, reconexão e volume até 300% preservados. Instaladores Windows/Mac e canal de atualização conferidos. Mac físico e iPhone/Safari continuam sem homologação.
 
 # Versão 0.15.9 — volume de transmissão até 300%
 
@@ -137,20 +123,35 @@ P2P continua sendo o padrão. Nenhum serviço pago, conta de hospedagem ou servi
 ## O que mudou
 
 - Botão **Ouvir** independente de **Ampliar**, inclusive quando o áudio chega depois do vídeo.
+
 - Recuperação automática de conexões de vídeo e da sessão do convidado. A seleção da fonte e as capturas existentes são preservadas. A tentativa de recuperar a sala dura até aproximadamente 90 segundos após detectar a queda; um reinício completo do app ainda exige entrar novamente.
+
 - Erros distintos para senha/convite, versão incompatível, sinalização, aprovação e mídia.
+
 - O convite vale oito horas para **novas entradas**. Não existe mais encerramento automático da sala ativa por esse prazo. Recuperações autenticadas de quem já entrou continuam permitidas.
+
 - **Priorizar o jogo** no seletor e nos controles da sala: captura conservadora, reserva maior de upload e adaptação. Pode reduzir qualidade para proteger o jogo; não promete eliminar toda queda de FPS.
+
 - Campo **Seu upload** nas opções. O limite efetivo considera o menor valor entre o teto configurado e a margem da conexão informada. Não usa o download como estimativa de upload.
+
 - Início em qualidade menor e aumento gradual. Perda, latência, banda indicada pelo WebRTC e tempo de codificação podem reduzir a qualidade. O navegador ainda decide o codificador; a tela indica hardware, software ou não identificado conforme os dados disponíveis.
+
 - Webcam limitada separadamente a 640 × 360, 15 FPS e até 900 kbps; tela recebe prioridade no orçamento e aproveita capacidade não usada pela câmera. A transmissão continua sujeita ao teto total.
+
 - Apelidos temporários, espectadores por fonte e saúde de cada transmissão. Rotas são exibidas como direta, TURN, SFU ou não identificada a partir dos dados reais disponíveis.
+
 - Economia de dados do espectador respeitada mesmo com adaptação desligada. SFU usa uma camada de vídeo para economizar codificadores; se alguém pede economia, o limite menor se aplica àquela fonte também para os demais espectadores.
+
 - Opção de continuar ouvindo minimizado: mantém áudio e suspende recebimento de vídeo. O sistema/navegador pode suspender uma página móvel em segundo plano; não é garantia de reprodução com iPhone bloqueado.
+
 - Aprovar entradas, bloquear novas entradas, expulsar, renovar e revogar convites. Quem já está conectado continua na sala ao renovar. Expulsar renova o convite para impedir reentrada com o código anterior; um convite novo pode ser compartilhado pelo anfitrião.
+
 - Limites de tamanho, complexidade, frequência e fila de mensagens de controle; limite inicial também antes da leitura do JSON do PeerJS.
+
 - Diagnóstico exportável por lista explícita de métricas, sem convite, senha, apelido, IP, SDP ou credencial. Medições manuais de jogos também podem ser exportadas.
+
 - Transporte de mídia separado. SFU próprio opcional/experimental com autorização curta, limite de onze participantes e permissão por fonte. TURN próprio opcional permanece nas opções avançadas.
+
 - CI essencial em Linux, execução cancelável, sem baixar Electron; compilação de Mac continua manual para controlar minutos de CI.
 
 ## Roteiro para comparar jogos reais
@@ -158,9 +159,13 @@ P2P continua sendo o padrão. Nenhum serviço pago, conta de hospedagem ou servi
 No painel **Medir desempenho no jogo**, registre FPS, ping e uso de GPU mostrados pelo jogo. O upload é coletado da transmissão; os demais valores são informados manualmente, não estimados pelo app.
 
 1. Faça uma medição sem transmissão, usando o mesmo jogo, cenário e opções gráficas.
+
 2. Repita com 1, 3, 5 e 10 espectadores de computadores externos, preferencialmente por cinco minutos em cada cenário.
+
 3. Compare com Priorizar o jogo ligado/desligado, tela sozinha e tela + webcam.
+
 4. Registre resolução, FPS, codec identificado e saúde da transmissão. Exporte o diagnóstico em cada etapa.
+
 5. Anote também oscilações de internet e se foi necessário TURN. Não confunda a RAM de um teste com dez navegadores no mesmo PC com a RAM do transmissor numa partida real.
 
 O painel e esse roteiro estão implementados. As medições com jogos reais e espectadores externos ainda precisam ser executadas; não foram substituídas por valores inventados.
@@ -168,20 +173,31 @@ O painel e esse roteiro estão implementados. As medições com jogos reais e es
 ## Alcance da validação
 
 | Ambiente/cenário | Situação |
+
 | --- | --- |
+
 | Windows, duas instâncias completas, tela + webcam sintéticas | Testado localmente |
+
 | Aprovação, bloqueio, expulsão, convite renovado | Testado entre as duas instâncias |
+
 | Queda forçada do controle e do vídeo, sem recapturar | Testado localmente |
+
 | Convite expirado com sessão ativa | Expiração simulada e recuperação testadas; sem esperar oito horas reais |
+
 | Dez espectadores Chromium no mesmo computador | Regressão sintética; não equivale a dez pessoas em redes externas |
+
 | SFU LiveKit próprio em loopback | Vídeo bidirecional, duas fontes, recuperação e expulsão testados localmente |
+
 | TURN de produção em rede externa | Não disponibilizado nem validado nesta versão; modelo e gerador incluídos |
+
 | Mac Intel / Apple Silicon | Pacotes compilados e verificados pelo workflow; uso em Mac físico pendente |
+
 | Áudio isolado no Mac | Experimental; verificação estrutural e autoteste, sem captura real em Mac físico |
+
 | iPhone / Safari físico | Pendente; fallback de tela cheia incluído, sem alegar homologação |
+
 | Jogos reais com 1, 3, 5 e 10 pessoas | Pendente; painel de medição e roteiro disponíveis |
 
 Todos precisam atualizar para 0.15 e recarregar a página para usar o protocolo novo. A atualização não converte salas abertas em versões anteriores.
 
 A suíte local contém 39 testes unitários passando. Relatórios de integração locais: qa-v15-final-2 (duas instâncias), qa-v15-ten-verified (dez espectadores) e qa-v15-sfu-final (SFU). Testes de interface usam vídeo de canvas e webcam sintética; o botão Ouvir usa uma faixa sintética para verificar sua interface. Não são uma homologação acústica real do Windows/Mac.
-
