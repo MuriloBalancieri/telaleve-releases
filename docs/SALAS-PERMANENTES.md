@@ -4,8 +4,6 @@ No app, clique em **Criar sala permanente**, escolha o nome e seu apelido. Copie
 
 **Sair** encerra somente sua participação na chamada atual. A sala fica salva mesmo se todos saírem. O primeiro membro que voltar abre uma nova sessão; o criador não precisa estar conectado. Tela, áudio e webcam continuam desligados até você escolher transmiti-los. **Encerrar para todos** encerra a sessão atual, mas não apaga a sala salva. **Esquecer** remove o acesso apenas deste aparelho; um novo convite é necessário para cadastrá-lo novamente.
 
-Se o único participante cair abruptamente, pode haver uma espera de até cerca de um minuto para a presença anterior expirar. Uma chamada em andamento continua usando a recuperação P2P da 0.17, com administradores e ordem de entrada. A administração, aprovação, expulsão e bloqueio no painel se aplicam à sessão atual. Não é uma implementação de canais, contas ou banimento permanente de servidor Discord.
-
 ## Gratuidade e limites
 
 A mídia continua P2P. Um pequeno cadastro Cloudflare D1 no plano gratuito mantém nomes, membros e o endereço da sessão ativa, permitindo reencontrar a turma quando ninguém estava online. Nenhum plano pago, TURN ou servidor de vídeo foi contratado. Salas salvas e fechadas não mantêm conexão, captura nem consultas periódicas no seu PC. A lista carrega uma vez ao abrir e a presença só é atualizada durante uma sessão.
@@ -16,7 +14,7 @@ Use o mesmo perfil do app ou navegador. Não há login nem sincronização autom
 
 ## Privacidade
 
-O link usa um fragmento (#room=), sem token individual. Cada aparelho recebe um token aleatório exclusivo. No servidor, token e segredo de convite são guardados como SHA-256; nomes e identificadores ficam no cadastro. O endereço P2P e a autorização da sessão ativa ficam no registro enquanto ela está aberta. Membros admitidos são confiáveis para assumir a sessão. As chaves administrativas de SFU e senhas de salas temporárias não entram nesse cadastro.
+O link usa um fragmento (#room=), sem token individual. Cada aparelho recebe um token aleatório exclusivo. No servidor, token e segredo de convite são guardados como SHA-256; nomes e identificadores ficam no cadastro. O endereço P2P e a autorização da sessão ativa ficam no registro enquanto ela está aberta. Membros admitidos são confiáveis para assumir a sessão. As chaves do servidor SFU e senhas de salas temporárias não entram nesse cadastro.
 
 No app, as salas usam safeStorage do sistema, sem alternativa em texto simples. No navegador, usam IndexedDB com conteúdo AES-GCM e chave não exportável. Isso protege o conteúdo armazenado contra leitura casual; não protege um perfil já comprometido ou código malicioso executado na origem. Diagnósticos não incluem tokens, convites ou respostas do cadastro. A perda do acesso ao cadastro não interrompe por si só a mídia P2P existente; novas entradas e reaberturas dependem de o serviço voltar.
 
