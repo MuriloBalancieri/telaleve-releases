@@ -1,0 +1,9 @@
+# Validação 0.20.0 — Atalho global de transmissão
+
+Configurações → Atalho para transmitir a tela. A pessoa escolhe uma combinação Ctrl (+ Shift opcional) e letra, número ou F1–F24. O atalho usa o monitor principal e o preset salvo nesta seção, com som ligado, sem seletor. Também permite importar o último preset utilizado no seletor. Desativado por padrão; sem captura fora da sala ou por mera inicialização do app. Funciona com o processo do app em segundo plano; não inicia outra tela quando já está transmitindo, nem interrompe a webcam.
+
+Configuração local separada, persistente entre atualizações. Um atalho ocupado não substitui o anterior; falha de gravação desfaz o novo registro. Registro global liberado ao sair do processo. Monitor identificado pelo ID do display principal, sem thumbnails; não escolhe outro monitor arbitrariamente quando há ambiguidade. Áudio continua usando o caminho nativo existente, incluindo exclusões de Discord/TelaLeve quando suportadas.
+
+146 testes automatizados aprovados: validação, persistência, conflito, desativação, repetição limitada, reversão em falha de gravação e monitor principal. Integração Windows/Chromium: combinação gravada na interface e realmente registrada no sistema, callback nativo acionado com janela oculta, preset personalizado 1080p/30/4 Mbps, seletor fechado, vídeo e faixa de áudio sintéticos recebidos por convidado P2P, repetição sem captura duplicada, encerramento e desativação. A mídia é sintética; não houve acionamento por teclado físico, captura da tela real ou teste em jogo exclusivo/elevado, Mac ou iPhone.
+
+Nenhum novo instalador Mac. Site publicado na Cloudflare e conferido: HTTP 200; index.html SHA-256 5e0937e67931c2d2c6f12dff2754562d32176d1c2bc25b02069ca56cbda46fbd, idêntico ao build. O atalho global é exclusivo do aplicativo instalado.
