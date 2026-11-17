@@ -1,5 +1,17 @@
 # Histórico de versões
 
+## 0.25.4
+
+Picture-in-Picture para a live da Twitch e correção do enquadramento na tela cheia.
+
+- **Picture-in-Picture no aplicativo:** novo botão no quadro da live abre uma janela flutuante sempre no topo (480×300, redimensionável) com o player da Twitch. Clicar de novo reaproveita a janela e troca o canal; fechar a janela devolve tudo ao normal. No navegador, o mesmo botão abre uma janela pop-up do canal.
+- **Tela cheia sem desnível:** no modo “Focar nas lives”, o quadro da Twitch agora estica como os vídeos. Antes ele mantinha a proporção 16:9 e deixava uma faixa preta embaixo, desalinhado com a tela compartilhada ao lado.
+- As informações (título, jogo, espectadores) e a linha de estatísticas continuam visíveis, com rolagem se faltar espaço.
+
+**Como usar:** atualize e reinicie. Na live, clique em **Picture-in-Picture** (ou **Ampliar** para a tela cheia). Para voltar, feche a janela flutuante.
+
+186 testes automatizados passaram, incluindo a rota da janela flutuante e a recusa de canais inválidos. Sem novo instalador Mac.
+
 ## 0.25.3
 
 A live da Twitch passou a abrir também no aplicativo instalado, e o status aparece de imediato.
