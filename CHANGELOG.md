@@ -1,438 +1,4703 @@
-# Histórico de versões
+# Hist├│rico de vers├Áes
 
 ## 0.24.0
 
-Suporte a clipes nativos AMD e início automático do buffer.
+Suporte a clipes nativos AMD e in├¡cio autom├ítico do buffer.
 
-- **Detecção automática da GPU do monitor principal:** usa AMD AMF em Radeon compatível ou NVIDIA NVENC, incluindo adaptadores secundários.
-- **Automático com alternativa de compatibilidade:** se o motor nativo não iniciar, libera a captura e tenta o motor anterior. O painel só confirma o codificador depois de receber vídeo.
-- **Ativar o buffer ao iniciar o app:** nova opção em Configurações → Clipes da tela. Salve para aplicar nas próximas aberturas, inclusive em segundo plano com o Windows quando o início do aplicativo estiver habilitado.
-- Mantém áudio, durações de 30/45/60 segundos, atalhos, qualidade e pasta local ou sincronizada. Desligar o buffer vale para a sessão; reabrir a janela não o religa.
-- Proteção contra iniciar uma gravação atrasada após cancelar a detecção da GPU.
+- **Detec├º├úo autom├ítica da GPU do monitor principal:** usa AMD AMF em Radeon compat├¡vel ou NVIDIA NVENC, incluindo adaptadores secund├írios.
+- **Autom├ítico com alternativa de compatibilidade:** se o motor nativo n├úo iniciar, libera a captura e tenta o motor anterior. O painel s├│ confirma o codificador depois de receber v├¡deo.
+- **Ativar o buffer ao iniciar o app:** nova op├º├úo em Configura├º├Áes ÔåÆ Clipes da tela. Salve para aplicar nas pr├│ximas aberturas, inclusive em segundo plano com o Windows quando o in├¡cio do aplicativo estiver habilitado.
+- Mant├®m ├íudio, dura├º├Áes de 30/45/60 segundos, atalhos, qualidade e pasta local ou sincronizada. Desligar o buffer vale para a sess├úo; reabrir a janela n├úo o religa.
+- Prote├º├úo contra iniciar uma grava├º├úo atrasada ap├│s cancelar a detec├º├úo da GPU.
 
-**Como usar:** atualize e reinicie. Deixe o motor em **Automático**. Para ativação nas próximas aberturas, marque **Ativar o buffer automaticamente ao iniciar o app** e salve as opções.
+**Como usar:** atualize e reinicie. Deixe o motor em **Autom├ítico**. Para ativa├º├úo nas pr├│ximas aberturas, marque **Ativar o buffer automaticamente ao iniciar o app** e salve as op├º├Áes.
 
-170 testes automatizados passaram, além dos testes do início automático e do fallback com mídia sintética. A captura física NVIDIA passou; AMD foi validado com detecção/fluxo simulados e o motor AMF compilado, sem teste físico de qualidade ou consumo numa Radeon. Requer GPU e driver compatíveis. Sem novo instalador Mac.
+170 testes automatizados passaram, al├®m dos testes do in├¡cio autom├ítico e do fallback com m├¡dia sint├®tica. A captura f├¡sica NVIDIA passou; AMD foi validado com detec├º├úo/fluxo simulados e o motor AMF compilado, sem teste f├¡sico de qualidade ou consumo numa Radeon. Requer GPU e driver compat├¡veis. Sem novo instalador Mac.
 
 
-## 0.23.0
-
-Clipes com captura nativa DirectX e codificação NVIDIA NVENC no Windows.
-
-- Gravação fora do navegador, com escala e conversão de vídeo na GPU e H.264 NVENC explícito.
-- Qualidade nativa: até 1080p/30 FPS a 16 Mbps, 1080p/60 FPS a 32 Mbps ou 720p/30 FPS a 8 Mbps. O FPS real depende do computador e da carga do jogo.
-- Fora da sala, fechar a janela libera a interface e mantém o buffer e o atalho ativos. Reabrir preserva a gravação.
-- MP4 com áudio AAC, durações de 30/45/60 segundos, pasta local ou sincronizada e atalhos preservados. Salva sem reencodificar.
-- Buffer comprimido limitado a 320 MiB e encerramento dos processos de captura se o app cair.
-- Motor Compatibilidade preservado para outros computadores. O motor nativo exige GPU NVIDIA compatível, driver e monitor principal na primeira GPU NVIDIA. Perfis SDR; HDR não validado.
-
-**Como usar:** atualize e reinicie. Em **Configurações → Clipes da tela**, escolha **Automático** ou **Nativo NVIDIA**, selecione a qualidade e ative o buffer. Para mudar qualidade ou áudio, desative e reative.
-
-Gravação opcional, desligada em cada inicialização. O motor acompanha o instalador, com suas licenças e fontes correspondentes. Testes com mídia sintética e captura física sem salvar o desktop; não houve medição de FPS/ping do jogo. Sem novo instalador Mac.
-
-
-## 0.22.1
-
-Correção de qualidade e continuidade dos clipes.
-
-- Preferência por H.264 com aceleração por hardware quando suportada, em vez de usar somente VP8. MP4 com AAC quando disponíveis; WebM como alternativa.
-- Perfis de qualidade: até **1080p/30 FPS** (Equilibrada, padrão), **1080p/60 FPS** (Mais fluida) e **720p/30 FPS** (Economia), com bitrate maior.
-- Gravador separado da interface; correção do relógio que podia descartar quadros após uma tela parada ou mudança de tempo da fonte.
-- Fila de quadros limitada, montagem do clipe cedendo execução à captura e encerramento seguro se o gravador deixar de responder.
-- Painel com FPS efetivamente recebido e codificado, resolução e codec. O pedido de hardware aparece como preferência, sem afirmar que a GPU foi confirmada.
-
-**Como usar:** atualize e reinicie o app. Em **Configurações → Clipes da tela**, escolha a qualidade, salve e ative o buffer. Para mudar qualidade com ele ligado, desative e reative.
-
-Durações, atalhos e pastas preservados. O buffer comprimido passa a ter teto de 96 MB; mais qualidade exige mais recursos. Com CPU/GPU saturados, o FPS real pode ficar abaixo do alvo.
-
-158 testes automatizados aprovados. Validação com áudio/vídeo sintéticos, análise dos quadros gravados e testes automatizados. O teste sob carga mantém o jogo aberto e compara os quadros produzidos/gravados; não comprova 30/60 FPS estáveis em jogos reais. Sem novo instalador Mac.
-
-
-## 0.22.0
-
-Clipes dos últimos **30, 45 ou 60 segundos** do monitor principal.
-
-- Funciona também fora da sala e com o app em segundo plano, depois de ativar o buffer nas configurações.
-- Atalho configurável seguindo as mesmas combinações do compartilhamento, com proteção contra atalhos repetidos.
-- Salvamento em pasta local ou pasta sincronizada com OneDrive, Google Drive, Dropbox ou serviço equivalente. O cliente de nuvem realiza o envio.
-- Vídeo WebM até 720p/30 FPS e som do sistema quando suportado, sem microfone.
-- Buffer desligado ao iniciar o app e limitado a 64 MB de dados codificados. Enquanto ativo, a captura e a codificação consomem recursos.
-
-Abra **Configurações → Clipes da tela**, escolha a duração, o atalho e a pasta, salve as opções e ative o buffer. O início pode variar cerca de um segundo; enquanto aquece, salva o tempo já disponível.
-
-Validação: 152 testes automatizados e teste Windows/Chromium com áudio e vídeo sintéticos para gravação e reprodução de 30/45/60 segundos. Sem teste físico de teclado/monitor, jogos ou sincronização real de nuvem. Sem novo instalador Mac.
-
-
-## 0.21.0
-
-- O **mesmo botão e atalho** agora ligam e desligam a transmissão da tela, preservando a webcam e a sala.
-- Sem webcam local, o QR aparece automaticamente. Nova opção **Ligar webcam → Usar câmera do celular · QR code**. Leia o QR no telefone, autorize a câmera e toque em Conectar câmera.
-- Vídeo aparece como sua própria webcam; pode transmitir junto com a tela, sem microfone e sem ocupar vaga extra.
-- QR temporário para um celular. Desligar no PC ou no celular encerra a câmera.
-
-Requer sala no modo Internet, página HTTPS e navegador do telefone aberto com a tela ligada. P2P continua gratuito; redes restritivas podem exigir TURN próprio.
-
-149 testes e integração Windows/Chromium com vídeo sintético aprovados. Sem validação em celular físico ou Safari/iPhone. Atualize e reinicie o app Windows. Nenhum novo instalador Mac.
-
-
-## 0.20.1
-
-Corrige o campo de atalho para aceitar **Ctrl + [** e **Ctrl + ]**, com Shift opcional. A combinação é salva e registrada como atalho global para iniciar a tela inteira com som, sem seletor.
-
-Atualize e reinicie o app Windows. Em Configurações → Atalho para transmitir a tela, clique no campo, pressione Ctrl + [ e clique em Salvar atalho.
-
-Verificado com os 5 testes do atalho e integração Windows/Chromium usando vídeo/áudio sintéticos e registro real de Ctrl+[ no sistema. Sem teste com tecla física em teclado ABNT2. Nenhum novo instalador Mac.
-
-
-## 0.20.0
-
-- Configure um **atalho global** em Configurações → Atalho para transmitir a tela.
-- Dentro da sala, inicia a **tela inteira do monitor principal com som**, sem abrir o seletor, inclusive com o TelaLeve em segundo plano.
-- Escolha resolução, FPS, bitrate e adaptação ou importe seu preset salvo.
-- O atalho fica desativado até ser configurado. Não inicia captura fora da sala, não duplica uma tela já ativa e não interrompe sua webcam.
-- Combinações ocupadas mostram erro; a configuração permanece salva nas atualizações.
-
-Atualize e reinicie o app Windows. Nenhum novo instalador Mac.
-
-Verificado com 146 testes e integração Windows/Chromium usando vídeo e áudio sintéticos. Callback global testado com janela oculta; sem teste de teclado físico ou jogos exclusivos/elevados.
-
-
-## 0.19.9
-
-- Botões **Ver minha tela** e **Ver minha webcam** para conferir suas próprias transmissões, separadamente ou juntas.
-- Prévia local sem som e sem uma segunda captura. Fechar a prévia mantém a transmissão ativa.
-- Webcam com preferência por **720p a 30 FPS**, até 1,8 Mbps por espectador, respeitando câmera, adaptação e upload disponível.
-- Mantém o modo Priorizar o jogo e a tentativa de formato compatível. Sem upscaling artificial.
-
-Atualize e reinicie o TelaLeve Windows. Nenhum novo instalador Mac.
-
-Verificado com 142 testes e integração Windows/Chromium com câmera virtual e duas fontes simultâneas. Sem homologação em webcam física, Mac ou Safari/iPhone.
-
-
-## 0.19.8
-
-Remove o menu padrão que aparecia ao pressionar Alt no aplicativo Windows.
-
-- A janela deixa de ter uma barra de menu oculta acionável por Alt.
-- A tecla não é bloqueada globalmente; os atalhos do sistema operacional, como Alt+Tab e Alt+F4, continuam a cargo do Windows.
-- O menu da bandeja e os controles do aplicativo continuam disponíveis.
-
-Verificação em um perfil Windows isolado confirmou a ausência do menu da aplicação e da barra de menu após três pressões de Alt. A interface permaneceu disponível e nenhuma sala foi criada. Alteração restrita ao aplicativo desktop; o webapp não precisa ser recarregado por causa desta mudança.
-
-Atualize para 0.19.8 e reinicie o TelaLeve. Nenhum novo instalador Mac foi gerado.
-
-
-## 0.19.7
-
-Recuperação de vídeo que para durante uma transmissão já aberta.
-
-- Verifica o progresso de captura, codificação e recepção durante toda a conexão, além da chegada do primeiro quadro.
-- Refaz somente a conexão afetada quando há atividade sem novos quadros, ou quando uma conexão estabelecida deixa de responder.
-- Quando a captura avança mas o codificador trava, tenta um codec alternativo apenas para aquele espectador, com limites conservadores de resolução, FPS e bitrate.
-- Duas fontes podem se recuperar simultaneamente; pedidos repetidos continuam limitados por fonte.
-- Uma tela estática, uma transmissão pausada e o modo somente áudio não são tratados como falha.
-- Diagnóstico exportável inclui contadores de recuperação, sem convites, senhas, nomes ou credenciais.
-
-141 testes automatizados aprovados. Integração Windows/Chromium com cinco espectadores, vídeo sintético e falhas simuladas nas estatísticas: recuperação de recepção e envio preservou a captura; o codec alternativo negociou VP8 e uma tela estática não provocou reconexões. O teste não reproduz as redes reais dos participantes nem confirma todas as causas possíveis de uma imagem preta.
-
-Atualize quem transmite e quem assiste para 0.19.7 e reinicie. Convidados no navegador devem recarregar o webapp fora da sala. Caso persista, exporte o diagnóstico do transmissor e de um espectador afetado enquanto a imagem estiver preta. Nenhum novo instalador Mac foi gerado.
-
-
-## 0.19.6
-
-Identificação local de aplicativos que o Windows indica usando a câmera, no seletor de webcam e após uma falha de abertura.
-
-- Consulta somente ao abrir a aba Webcam ou após uma tentativa que falhou; não há monitoramento contínuo.
-- Exibe nomes, sem compartilhar caminhos, processos ou informações do computador com a sala ou o serviço.
-- A lista pode ser incompleta e não confirma que o aplicativo bloqueia a webcam selecionada. A informação é uma indicação do Windows, não uma detecção garantida de conflito.
-- Histórico sem processo correspondente e o próprio TelaLeve são desconsiderados. Sem encerramento automático de aplicativos.
-- Organização da documentação e das notas históricas.
-
-131 testes automatizados e cinco verificações do filtro nativo aprovados. Integração Windows com câmera simulada verificou o texto de indicação, a consulta sem ligar a webcam, a recuperação da abertura e a liberação ao parar. A detecção de conflitos reais entre dispositivos ou aplicativos físicos ainda não foi homologada. Recurso disponível no aplicativo Windows; navegadores e Mac não identificam os outros programas.
-
-Atualize para 0.19.6 e reinicie o TelaLeve. Nenhum novo instalador Mac foi gerado.
-
-
-## 0.19.5
-
-Melhora a abertura de webcams que apresentavam erro de dispositivo em uso sem outro aplicativo usando a câmera.
-
-- Formato de captura negociado com o driver, sem impor limites rígidos de resolução e FPS na abertura.
-
-- Uma única nova tentativa compatível para falha de inicialização ou formato, mantendo o mesmo dispositivo selecionado e sem microfone.
-
-- Erros distinguem permissão negada, dispositivo ausente, formato incompatível e falha do sistema ao iniciar a câmera.
-
-- Perfil de envio leve da webcam permanece separado do compartilhamento de tela.
-
-128 testes automatizados aprovados. Integração Windows com câmera simulada recuperou uma falha NotReadableError, transmitiu a imagem por P2P e liberou o dispositivo ao parar. Tela + webcam simultâneas também foram verificadas. A webcam física do usuário não foi ativada neste teste, portanto a confirmação do driver real permanece pendente.
-
-Atualize para 0.19.5 e reinicie o TelaLeve antes de testar. Para convidados no navegador, recarregue o webapp fora da sala. Nenhum novo instalador Mac foi gerado.
-
-## 0.19.4
-
-Corrige a qualidade que ficava presa em baixa resolução e os vídeos que não terminavam de abrir.
-
-- Latência estável acima de 250 ms não reduz mais a qualidade continuamente. A adaptação distingue atraso constante de crescimento de latência, perda de pacotes e sobrecarga persistente.
-
-- Jogos podem reduzir resolução para preservar FPS quando faltar banda; texto mantém seu perfil de detalhes.
-
-- Vídeo que não conecta ou não decodifica o primeiro quadro tenta novamente automaticamente, mantendo a fonte selecionada.
-
-- Ajustes idênticos de qualidade não são reaplicados ao codificador; consultas simultâneas de estatísticas são agrupadas.
-
-121 testes automatizados aprovados. Teste integrado com cinco espectadores reais sobre conexão local, vídeo animado e 272 ms simulados nas estatísticas: 1280×720 a cerca de 28–30 FPS. Recuperação de conexão sem recaptura verificada. A simulação não reproduz perda, jitter ou redes de provedores diferentes. Somente instalador Windows nesta versão; nenhum novo instalador Mac.
-
-Atualize o aplicativo de todos os transmissores e espectadores para 0.19.4 e reinicie. No navegador, recarregue a página fora da sala para obter a correção.
-
-## 0.19.3
-
-Corrige a disposição de controles no aplicativo Windows e melhora o acesso às configurações em janelas menores.
-
-## 0.19.2
-
-Melhorias no nome pessoal dos participantes, na reconexão e no registro de sessões.
-
-## 0.19.1
-
-- Configurações com Nome padrão no Windows e no navegador; salvamento disponível antes de entrar e durante uma sala.
-
-- Campos de criação, convite e entrada em salas salvas usam o nome escolhido.
-
-- Mudança de nome do anfitrião e dos convidados aparece para todos sem recriar captura, player ou conexão de vídeo.
-
-- 113 testes automatizados e integração Windows/Chromium com vídeo sintético ativo. Sem novo instalador Mac nesta versão, por decisão do proprietário; os downloads anteriores continuam no histórico.
-
-## 0.19.0
-
-Melhorias na organização de salas e nas conexões. Atualização do aplicativo e dos pacotes distribuídos.
-
-## 0.18.2
-
-- Botão Focar nas lives amplia uma ou duas transmissões na janela, ocultando os painéis da sala.
-
-- Tela cheia conjunta, retorno por Esc/Voltar à sala, organização lado a lado ou empilhada conforme a janela.
-
-- Players, som, volume, PiP e conexões existentes preservados; sem novas capturas nem decodificadores extras.
-
-- Navegação de teclado isolada no foco e restauração da interface ao terminar a última live ou sair da sala.
-
-- 100 testes unitários e integração Windows/Chromium com duas mídias sintéticas. Mac físico/iPhone/Safari seguem sem homologação.
-
-## 0.18.1
-
-- Corrigido launcher Windows para aceitar e encaminhar convites permanentes ao app, a frio e pela bandeja já aberta.
-
-- Página do convite oferece abrir no app ou continuar no navegador, sem entrar automaticamente em uma chamada pela web.
-
-- Aviso sonoro sintetizado e visual para novas telas/webcams; atualizações de qualidade não repetem o aviso. Contexto suspenso após a reprodução e liberado ao sair.
-
-- Compartilhar áudio marcado por padrão em fontes compatíveis; é possível desmarcar. Webcam continua sem microfone e captura exige confirmação.
-
-- 95 testes unitários e teste integrado Windows/Chromium. Mac físico/iPhone/Safari e confirmação de protocolo em Chrome/Firefox reais seguem sem homologação.
-
-## 0.18.0
-
-- Salas permanentes com link fixo e lista salva no app e navegador, mesmo quando todos estão offline.
-
-- Qualquer membro salvo pode reabrir a chamada; criador ausente não impede entrada. Fontes continuam desligadas até confirmação.
-
-- Cadastro no Cloudflare D1 gratuito; mídia segue P2P. Associação por aparelho com token próprio cifrado localmente e hash no servidor.
-
-- Protocolo 9 mantido; convites permanentes exigem app 0.18 ou site atualizado. Mac físico e iPhone/Safari seguem pendentes.
-
-## 0.17.0
-
-- Mesmo link na recuperação automática; tela e webcam entre sobreviventes continuam. Corrigida também a lista transitória durante reconexões simultâneas para manter seleções e autorizações de vídeo.
-
-- Estado de recuperação limitado e guardado somente em memória, sem senha em texto. Expulsão renova credenciais de recuperação dos demais participantes.
-
-- Protocolo 9: atualize todos os apps e recarregue o site. Sem servidor pago novo. Dependência de sinalização acessível e participantes sincronizados; Mac físico/iPhone continuam pendentes de homologação.
-
-## 0.16.0
-
-Ao usar Sair da sala, o controle pode passar a outro participante conectado. As capturas e conexões dos participantes que permanecem são mantidas. Encerrar para todos é uma ação separada do dono.
-
-## 0.15.9 — Volume até 300%
-
-- Controle de volume de 0% a 300%, com porcentagem ao lado do slider.
-
-- Amplificação real acima de 100%, independente por transmissão.
-
-- Silenciar e reconectar preservam o volume escolhido, sem duplicar o som.
-
-- Processamento criado somente ao ouvir, suspenso sem áudio ou silenciado e encerrado ao remover a imagem.
-
-- Navegadores sem suporte à amplificação informam a limitação a 100%.
-
-## 0.15.8 — Apelido e preset salvos
-
-- Último apelido aceito preenchido ao criar ou entrar em salas, inclusive no navegador.
-
-- Último preset de tela restaurado: modo, resolução, FPS, bitrate e adaptação.
-
-- Preferências locais por perfil do app ou navegador, sem cadastro ou servidor.
-
-- Webcam preserva o preset da tela; dados inválidos ou armazenamento bloqueado não impedem usar o app.
-
-- A fonte e o compartilhamento de áudio continuam dependendo da escolha do usuário.
-
-## 0.15.7 — Mais fácil de assistir
-
-- Cartões separados para tela e webcam, com nome da pessoa e botões Assistir / Parar de assistir.
-
-- Destaque Assistindo agora e orientação ao atingir duas transmissões abertas.
-
-- Pessoas que não transmitem ficam separadas das opções de vídeo.
-
-- Parar de assistir também disponível no player; foco, áudio e volume preservados nas atualizações da sala.
-
-- Sem prévias extras ou aumento no limite de dois vídeos recebidos.
-
-## 0.15.6 — Tela cheia e Picture-in-Picture
-
-- Corrige Ampliar, com tela cheia real e saída por Esc.
-
-- Adiciona Picture-in-Picture nativo por transmissão recebida.
-
-- Mantém vídeo com a janela principal oculta durante PiP; retoma economia ao fechar.
-
-- Reutiliza o vídeo recebido e preserva áudio/volume; limpa o modo ao retirar a fonte.
-
-- Mensagens de erro e controles aguardam carregamento do vídeo.
-
-- 58 testes unitários e fluxo integrado Windows; Mac físico pendente.
-
-## 0.15.5 — Corrigir abertura no aplicativo
-
-- Aceita o endereço com barra acrescentada pela normalização do sistema.
-
-- Novo endereço local compatível, preservando os convites anteriores.
-
-- Teste do protocolo registrado no Windows, com senha, bandeja e aprovação.
-
-- Página do convite atualizada para orientar o uso da versão corrigida.
-
-- 51 testes unitários; Mac físico e homologação manual de navegadores pendentes.
-
-## 0.15.4 — Cores do seu aplicativo
-
-- Seis paletas, incluindo tema claro, e cores de destaque e fundo personalizadas.
-
-- Prévia imediata, salvar, cancelar e restaurar a paleta original.
-
-- Preferência local por usuário, sem alterar os amigos, a sala ou os vídeos.
-
-- Contraste automático dos textos e controles.
-
-- 50 testes unitários e teste da interface Windows; Mac físico pendente.
-
-## 0.15.3 — Abrir no TelaLeve
-
-- Botão na página do convite abre o aplicativo instalado no Windows e Mac.
-
-- Convite recebido com app fechado ou na bandeja; senha e aprovação respeitadas.
-
-- Confirmação antes de sair de outra sala; repetir convite mantém a sessão.
-
-- Alternativa para continuar no navegador e baixar o app.
-
-- 47 testes unitários e teste integrado com iniciador real do Windows; Mac físico pendente.
-
-# Histórico das distribuições
-
-Os pacotes abaixo foram preparados em 17/10/2026 e arquivados no GitHub posteriormente. Os arquivos de versões anteriores são preservados; as tags deste repositório identificam distribuições, sem reconstruir um histórico de commits do aplicativo.
-
-## [0.15.2 — Links diretos para a sala](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.15.2)
-
-Copiar link da sala passa a gerar convite HTTPS compacto, sem encurtador ou banco adicional. Sala sem senha inicia a entrada ao abrir o link; senha e aprovação permanecem exigidas. Código anterior disponível numa seção separada. Correção da geração da página para preservar o código minificado e sua integridade. 45 testes unitários e testes de links com/sem senha e aprovação.
-
-## [0.15.1 — Recuperação da qualidade](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.15.1)
-
-Corrige a realimentação entre estimativa de banda e redução inicial que podia manter a imagem em meia resolução. A qualidade sobe novamente em uma conexão saudável; limites de upload, economia do espectador e Priorizar o jogo permanecem. 41 testes unitários e teste entre aplicativos confirmando retorno a 1080p sem recapturar.
-
-## [0.15.0 — Estabilidade, desempenho e controle](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.15.0)
-
-Recuperação de vídeo e sessão sem recapturar, modo Priorizar o jogo, margem de upload, perfil leve de webcam, qualidade gradual e saúde de cada fonte. Apelidos, espectadores, escuta minimizada, diagnóstico sem credenciais, aprovação, bloqueio, expulsão e renovação de convites. P2P padrão e SFU/TURN próprios opcionais, sem contratação de servidores. Convite de oito horas deixa de limitar a duração da sala. 39 testes unitários; integração sintética com dez espectadores e SFU local. Homologação física em jogos, iPhone/Safari e Mac permanece pendente.
-
-## [0.14.0 — Áudio isolado no Mac](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.14.0)
-
-Captura nativa experimental por aplicativo no macOS 14.2+, com exclusão do Discord instalado na tela inteira. Filtro por lista explícita, conversor estéreo 48 kHz e encerramento em falhas. 29 testes unitários e autoteste nativo de política/conversão; captura real, permissões e desempenho em Mac físico ainda não validados.
-
-## [0.13.0 — Mac e verificação automática](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.13.0)
-
-DMG/ZIP para Mac Intel e Apple Silicon, verificação automática com download manual no Mac e notificações de versão na bandeja Windows sem abrir Chromium. Fonte preservado em repositório privado. 28 testes passaram em Windows/macOS; instaladores Mac gerados em runner macOS, ainda sem teste físico do usuário ou Developer ID.
-
-## [0.12.0 — Áudio de aplicativo e tela sem Discord](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.12.0)
-
-Áudio da janela usa captura nativa por árvore de processos do aplicativo escolhido. Tela inteira mistura sessões permitidas e exclui Discord instalado (incluindo novas instâncias) e o próprio TelaLeve. Sem driver, gravação ou mudança do som local. Descoberta separada da mixagem, temporização de áudio do Windows, buffers limitados e encerramento ao sair.
-
-Falhas não ativam áudio geral. Outras janelas/abas do mesmo programa não são separadas. Discord em navegador não é filtrado de forma independente. Recurso disponível no app Windows com suporte à API de loopback por processo; navegador/Mac continuam com seu seletor nativo.
-
-25 testes unitários, tons sintéticos isolados, reinício de instâncias Discord simuladas, envio nativo de áudio/vídeo por P2P, controles e regressão de tela+webcam em dois apps. Discord real em chamada, Windows 10 físico e Mac não foram validados nesta etapa.
-
-## [0.11.0 — Iniciar com Windows e tela com áudio](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.11.0)
-
-Opção para iniciar somente a bandeja nativa com o Windows, desligada por padrão. Atualização preserva a escolha e desinstalação remove a entrada. Nenhuma sala ou captura é iniciada automaticamente.
-
-Tela com áudio opcional da saída padrão do Windows, silenciamento independente, volume por transmissão recebida e pausa conjunta de som/imagem. Webcam permanece sem microfone. Áudio do Discord também entra se usar a mesma saída; captura exclusiva por aplicativo ainda não está implementada. Navegadores dependem da disponibilidade de captura da fonte.
-
-## [0.10.0 — Instalador e atualização automática](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.10.0)
-
-Instalador Windows por usuário com atalhos e desinstalador. O app instalado procura e baixa atualizações pelo GitHub Releases fora de salas, valida assinatura Ed25519 e SHA-512, e instala ao sair ou reiniciar. Fechar para a bandeja com atualização pronta preserva o funcionamento em segundo plano, sem ligar captura. Preferências são mantidas.
-
-A migração de ZIP antigo para instalador é manual na primeira vez. O portátil não atualiza automaticamente. A assinatura própria das atualizações não substitui um certificado Authenticode do Windows; esta prévia pode mostrar editor desconhecido.
-
-## [0.9.0 — Acesso gratuito pelo celular com link e QR Code](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.9.0)
-
-Página pública HTTPS no Cloudflare Pages, link privado e QR Code gerado no app. O link completo também é aceito no campo de convite do aplicativo.
-
-Não precisa abrir portas ou configurar certificado no PC para essa opção. Vídeo continua P2P; não inclui serviço TURN. Algumas redes restritivas podem exigir TURN.
-
-## [0.8.0 — Hospedagem local para navegador](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.8.0)
-
-O dono da sala pode hospedar a página HTTPS no PC, escolher porta/certificado e compartilhar link. A prévia HTTP fica restrita a localhost.
-
-A hospedagem local avançada exige certificado confiável e configuração de rede. A opção simplificada sem encaminhamento de portas chega na 0.9.
-
-## [0.7.0 — Um app para criar, entrar, assistir e transmitir](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.7.0)
-
-O mesmo aplicativo Windows cria salas e entra por convite/senha. Convidados assistem e transmitem tela e webcam no app.
-
-O HTML permanece como alternativa. A distribuição nativa é Windows x64; Mac nativo ainda não está disponível.
-
-## [0.6.0 — Tela e webcam ao mesmo tempo](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.6.0)
-
-Cada pessoa transmite tela e webcam simultaneamente, com pausa e parada independentes. Duas fontes da mesma pessoa podem ser assistidas juntas.
-
-O protocolo mudou: atualize aplicativo e participante para a mesma versão. O orçamento de upload é compartilhado entre as fontes.
-
-## [0.5.0 — Seletor de fontes, modos e webcam](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.5.0)
-
-Abas Aplicativos, Tela inteira e Webcam; perfis Jogos, texto e Personalizada; atalhos SD/HD. Webcam ativada somente após confirmação.
-
-Nesta versão cada pessoa transmite tela OU webcam. Tela e webcam simultâneas chegam na 0.6.
-
-## [0.4.0 — Várias pessoas transmitindo na sala](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.4.0)
-
-Convidados também podem transmitir. Cada participante escolhe até duas imagens para assistir simultaneamente.
-
-Nesta versão cada pessoa compartilha uma fonte de tela por vez. Use app e participante da mesma versão.
-
-## [0.3.0 — Criar sala antes de compartilhar](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.3.0)
-
-Fluxo inicial para criar sala e depois escolher a tela. Parar a captura mantém a sala e o convite; sair encerra a sala.
-
-Use o espectador da mesma versão para aguardar na sala antes da transmissão.
-
-## [0.2.0 — Transmissão P2P para dez espectadores](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.2.0)
-
-Migração para vídeo P2P, sinalização pública PeerJS, convite e senha opcional. Espectador independente em HTML.
-
-Até dez espectadores. Não inclui webcam; não há áudio. P2P pode exigir TURN em redes restritivas.
-
-## [0.1.0 — Primeira prévia para Windows](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.1.0)
-
-Compartilhamento de tela com bandeja nativa, pausa/retomada e diagnóstico local. Arquitetura inicial com LiveKit, antes da migração para P2P.
-
-Versão histórica: o uso pela internet exigia servidor LiveKit e servidor de salas. Limite original de cinco espectadores.
+## 0.23.0
+
+
+
+Clipes com captura nativa DirectX e codifica├º├úo NVIDIA NVENC no Windows.
+
+
+
+- Grava├º├úo fora do navegador, com escala e convers├úo de v├¡deo na GPU e H.264 NVENC expl├¡cito.
+
+- Qualidade nativa: at├® 1080p/30 FPS a 16 Mbps, 1080p/60 FPS a 32 Mbps ou 720p/30 FPS a 8 Mbps. O FPS real depende do computador e da carga do jogo.
+
+- Fora da sala, fechar a janela libera a interface e mant├®m o buffer e o atalho ativos. Reabrir preserva a grava├º├úo.
+
+- MP4 com ├íudio AAC, dura├º├Áes de 30/45/60 segundos, pasta local ou sincronizada e atalhos preservados. Salva sem reencodificar.
+
+- Buffer comprimido limitado a 320 MiB e encerramento dos processos de captura se o app cair.
+
+- Motor Compatibilidade preservado para outros computadores. O motor nativo exige GPU NVIDIA compat├¡vel, driver e monitor principal na primeira GPU NVIDIA. Perfis SDR; HDR n├úo validado.
+
+
+
+**Como usar:** atualize e reinicie. Em **Configura├º├Áes ÔåÆ Clipes da tela**, escolha **Autom├ítico** ou **Nativo NVIDIA**, selecione a qualidade e ative o buffer. Para mudar qualidade ou ├íudio, desative e reative.
+
+
+
+Grava├º├úo opcional, desligada em cada inicializa├º├úo. O motor acompanha o instalador, com suas licen├ºas e fontes correspondentes. Testes com m├¡dia sint├®tica e captura f├¡sica sem salvar o desktop; n├úo houve medi├º├úo de FPS/ping do jogo. Sem novo instalador Mac.
+
+
+
+
+
+## 0.22.1
+
+
+
+
+
+
+
+Corre├º├úo de qualidade e continuidade dos clipes.
+
+
+
+
+
+
+
+- Prefer├¬ncia por H.264 com acelera├º├úo por hardware quando suportada, em vez de usar somente VP8. MP4 com AAC quando dispon├¡veis; WebM como alternativa.
+
+
+
+- Perfis de qualidade: at├® **1080p/30 FPS** (Equilibrada, padr├úo), **1080p/60 FPS** (Mais fluida) e **720p/30 FPS** (Economia), com bitrate maior.
+
+
+
+- Gravador separado da interface; corre├º├úo do rel├│gio que podia descartar quadros ap├│s uma tela parada ou mudan├ºa de tempo da fonte.
+
+
+
+- Fila de quadros limitada, montagem do clipe cedendo execu├º├úo ├á captura e encerramento seguro se o gravador deixar de responder.
+
+
+
+- Painel com FPS efetivamente recebido e codificado, resolu├º├úo e codec. O pedido de hardware aparece como prefer├¬ncia, sem afirmar que a GPU foi confirmada.
+
+
+
+
+
+
+
+**Como usar:** atualize e reinicie o app. Em **Configura├º├Áes ÔåÆ Clipes da tela**, escolha a qualidade, salve e ative o buffer. Para mudar qualidade com ele ligado, desative e reative.
+
+
+
+
+
+
+
+Dura├º├Áes, atalhos e pastas preservados. O buffer comprimido passa a ter teto de 96 MB; mais qualidade exige mais recursos. Com CPU/GPU saturados, o FPS real pode ficar abaixo do alvo.
+
+
+
+
+
+
+
+158 testes automatizados aprovados. Valida├º├úo com ├íudio/v├¡deo sint├®ticos, an├ílise dos quadros gravados e testes automatizados. O teste sob carga mant├®m o jogo aberto e compara os quadros produzidos/gravados; n├úo comprova 30/60 FPS est├íveis em jogos reais. Sem novo instalador Mac.
+
+
+
+
+
+
+
+
+
+
+
+## 0.22.0
+
+
+
+
+
+
+
+
+
+Clipes dos ├║ltimos **30, 45 ou 60 segundos** do monitor principal.
+
+
+
+
+
+
+
+
+
+- Funciona tamb├®m fora da sala e com o app em segundo plano, depois de ativar o buffer nas configura├º├Áes.
+
+
+
+
+- Atalho configur├ível seguindo as mesmas combina├º├Áes do compartilhamento, com prote├º├úo contra atalhos repetidos.
+
+
+
+
+- Salvamento em pasta local ou pasta sincronizada com OneDrive, Google Drive, Dropbox ou servi├ºo equivalente. O cliente de nuvem realiza o envio.
+
+
+
+
+- V├¡deo WebM at├® 720p/30 FPS e som do sistema quando suportado, sem microfone.
+
+
+
+
+- Buffer desligado ao iniciar o app e limitado a 64 MB de dados codificados. Enquanto ativo, a captura e a codifica├º├úo consomem recursos.
+
+
+
+
+
+
+
+
+
+Abra **Configura├º├Áes ÔåÆ Clipes da tela**, escolha a dura├º├úo, o atalho e a pasta, salve as op├º├Áes e ative o buffer. O in├¡cio pode variar cerca de um segundo; enquanto aquece, salva o tempo j├í dispon├¡vel.
+
+
+
+
+
+
+
+
+
+Valida├º├úo: 152 testes automatizados e teste Windows/Chromium com ├íudio e v├¡deo sint├®ticos para grava├º├úo e reprodu├º├úo de 30/45/60 segundos. Sem teste f├¡sico de teclado/monitor, jogos ou sincroniza├º├úo real de nuvem. Sem novo instalador Mac.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.21.0
+
+
+
+
+
+
+
+
+
+
+
+- O **mesmo bot├úo e atalho** agora ligam e desligam a transmiss├úo da tela, preservando a webcam e a sala.
+
+
+
+
+
+- Sem webcam local, o QR aparece automaticamente. Nova op├º├úo **Ligar webcam ÔåÆ Usar c├ómera do celular ┬À QR code**. Leia o QR no telefone, autorize a c├ómera e toque em Conectar c├ómera.
+
+
+
+
+
+- V├¡deo aparece como sua pr├│pria webcam; pode transmitir junto com a tela, sem microfone e sem ocupar vaga extra.
+
+
+
+
+
+- QR tempor├írio para um celular. Desligar no PC ou no celular encerra a c├ómera.
+
+
+
+
+
+
+
+
+
+
+
+Requer sala no modo Internet, p├ígina HTTPS e navegador do telefone aberto com a tela ligada. P2P continua gratuito; redes restritivas podem exigir TURN pr├│prio.
+
+
+
+
+
+
+
+
+
+
+
+149 testes e integra├º├úo Windows/Chromium com v├¡deo sint├®tico aprovados. Sem valida├º├úo em celular f├¡sico ou Safari/iPhone. Atualize e reinicie o app Windows. Nenhum novo instalador Mac.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.20.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+Corrige o campo de atalho para aceitar **Ctrl + [** e **Ctrl + ]**, com Shift opcional. A combina├º├úo ├® salva e registrada como atalho global para iniciar a tela inteira com som, sem seletor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Atualize e reinicie o app Windows. Em Configura├º├Áes ÔåÆ Atalho para transmitir a tela, clique no campo, pressione Ctrl + [ e clique em Salvar atalho.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Verificado com os 5 testes do atalho e integra├º├úo Windows/Chromium usando v├¡deo/├íudio sint├®ticos e registro real de Ctrl+[ no sistema. Sem teste com tecla f├¡sica em teclado ABNT2. Nenhum novo instalador Mac.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.20.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Configure um **atalho global** em Configura├º├Áes ÔåÆ Atalho para transmitir a tela.
+
+
+
+
+
+
+
+- Dentro da sala, inicia a **tela inteira do monitor principal com som**, sem abrir o seletor, inclusive com o TelaLeve em segundo plano.
+
+
+
+
+
+
+
+- Escolha resolu├º├úo, FPS, bitrate e adapta├º├úo ou importe seu preset salvo.
+
+
+
+
+
+
+
+- O atalho fica desativado at├® ser configurado. N├úo inicia captura fora da sala, n├úo duplica uma tela j├í ativa e n├úo interrompe sua webcam.
+
+
+
+
+
+
+
+- Combina├º├Áes ocupadas mostram erro; a configura├º├úo permanece salva nas atualiza├º├Áes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Atualize e reinicie o app Windows. Nenhum novo instalador Mac.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Verificado com 146 testes e integra├º├úo Windows/Chromium usando v├¡deo e ├íudio sint├®ticos. Callback global testado com janela oculta; sem teste de teclado f├¡sico ou jogos exclusivos/elevados.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.19.9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Bot├Áes **Ver minha tela** e **Ver minha webcam** para conferir suas pr├│prias transmiss├Áes, separadamente ou juntas.
+
+
+
+
+
+
+
+
+- Pr├®via local sem som e sem uma segunda captura. Fechar a pr├®via mant├®m a transmiss├úo ativa.
+
+
+
+
+
+
+
+
+- Webcam com prefer├¬ncia por **720p a 30 FPS**, at├® 1,8 Mbps por espectador, respeitando c├ómera, adapta├º├úo e upload dispon├¡vel.
+
+
+
+
+
+
+
+
+- Mant├®m o modo Priorizar o jogo e a tentativa de formato compat├¡vel. Sem upscaling artificial.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Atualize e reinicie o TelaLeve Windows. Nenhum novo instalador Mac.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Verificado com 142 testes e integra├º├úo Windows/Chromium com c├ómera virtual e duas fontes simult├óneas. Sem homologa├º├úo em webcam f├¡sica, Mac ou Safari/iPhone.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.19.8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Remove o menu padr├úo que aparecia ao pressionar Alt no aplicativo Windows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- A janela deixa de ter uma barra de menu oculta acion├ível por Alt.
+
+
+
+
+
+
+
+
+
+- A tecla n├úo ├® bloqueada globalmente; os atalhos do sistema operacional, como Alt+Tab e Alt+F4, continuam a cargo do Windows.
+
+
+
+
+
+
+
+
+
+- O menu da bandeja e os controles do aplicativo continuam dispon├¡veis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Verifica├º├úo em um perfil Windows isolado confirmou a aus├¬ncia do menu da aplica├º├úo e da barra de menu ap├│s tr├¬s press├Áes de Alt. A interface permaneceu dispon├¡vel e nenhuma sala foi criada. Altera├º├úo restrita ao aplicativo desktop; o webapp n├úo precisa ser recarregado por causa desta mudan├ºa.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Atualize para 0.19.8 e reinicie o TelaLeve. Nenhum novo instalador Mac foi gerado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.19.7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Recupera├º├úo de v├¡deo que para durante uma transmiss├úo j├í aberta.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Verifica o progresso de captura, codifica├º├úo e recep├º├úo durante toda a conex├úo, al├®m da chegada do primeiro quadro.
+
+
+
+
+
+
+
+
+
+
+- Refaz somente a conex├úo afetada quando h├í atividade sem novos quadros, ou quando uma conex├úo estabelecida deixa de responder.
+
+
+
+
+
+
+
+
+
+
+- Quando a captura avan├ºa mas o codificador trava, tenta um codec alternativo apenas para aquele espectador, com limites conservadores de resolu├º├úo, FPS e bitrate.
+
+
+
+
+
+
+
+
+
+
+- Duas fontes podem se recuperar simultaneamente; pedidos repetidos continuam limitados por fonte.
+
+
+
+
+
+
+
+
+
+
+- Uma tela est├ítica, uma transmiss├úo pausada e o modo somente ├íudio n├úo s├úo tratados como falha.
+
+
+
+
+
+
+
+
+
+
+- Diagn├│stico export├ível inclui contadores de recupera├º├úo, sem convites, senhas, nomes ou credenciais.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+141 testes automatizados aprovados. Integra├º├úo Windows/Chromium com cinco espectadores, v├¡deo sint├®tico e falhas simuladas nas estat├¡sticas: recupera├º├úo de recep├º├úo e envio preservou a captura; o codec alternativo negociou VP8 e uma tela est├ítica n├úo provocou reconex├Áes. O teste n├úo reproduz as redes reais dos participantes nem confirma todas as causas poss├¡veis de uma imagem preta.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Atualize quem transmite e quem assiste para 0.19.7 e reinicie. Convidados no navegador devem recarregar o webapp fora da sala. Caso persista, exporte o diagn├│stico do transmissor e de um espectador afetado enquanto a imagem estiver preta. Nenhum novo instalador Mac foi gerado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.19.6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Identifica├º├úo local de aplicativos que o Windows indica usando a c├ómera, no seletor de webcam e ap├│s uma falha de abertura.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Consulta somente ao abrir a aba Webcam ou ap├│s uma tentativa que falhou; n├úo h├í monitoramento cont├¡nuo.
+
+
+
+
+
+
+
+
+
+
+
+- Exibe nomes, sem compartilhar caminhos, processos ou informa├º├Áes do computador com a sala ou o servi├ºo.
+
+
+
+
+
+
+
+
+
+
+
+- A lista pode ser incompleta e n├úo confirma que o aplicativo bloqueia a webcam selecionada. A informa├º├úo ├® uma indica├º├úo do Windows, n├úo uma detec├º├úo garantida de conflito.
+
+
+
+
+
+
+
+
+
+
+
+- Hist├│rico sem processo correspondente e o pr├│prio TelaLeve s├úo desconsiderados. Sem encerramento autom├ítico de aplicativos.
+
+
+
+
+
+
+
+
+
+
+
+- Organiza├º├úo da documenta├º├úo e das notas hist├│ricas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+131 testes automatizados e cinco verifica├º├Áes do filtro nativo aprovados. Integra├º├úo Windows com c├ómera simulada verificou o texto de indica├º├úo, a consulta sem ligar a webcam, a recupera├º├úo da abertura e a libera├º├úo ao parar. A detec├º├úo de conflitos reais entre dispositivos ou aplicativos f├¡sicos ainda n├úo foi homologada. Recurso dispon├¡vel no aplicativo Windows; navegadores e Mac n├úo identificam os outros programas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Atualize para 0.19.6 e reinicie o TelaLeve. Nenhum novo instalador Mac foi gerado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.19.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Melhora a abertura de webcams que apresentavam erro de dispositivo em uso sem outro aplicativo usando a c├ómera.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Formato de captura negociado com o driver, sem impor limites r├¡gidos de resolu├º├úo e FPS na abertura.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Uma ├║nica nova tentativa compat├¡vel para falha de inicializa├º├úo ou formato, mantendo o mesmo dispositivo selecionado e sem microfone.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Erros distinguem permiss├úo negada, dispositivo ausente, formato incompat├¡vel e falha do sistema ao iniciar a c├ómera.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Perfil de envio leve da webcam permanece separado do compartilhamento de tela.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+128 testes automatizados aprovados. Integra├º├úo Windows com c├ómera simulada recuperou uma falha NotReadableError, transmitiu a imagem por P2P e liberou o dispositivo ao parar. Tela + webcam simult├óneas tamb├®m foram verificadas. A webcam f├¡sica do usu├írio n├úo foi ativada neste teste, portanto a confirma├º├úo do driver real permanece pendente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Atualize para 0.19.5 e reinicie o TelaLeve antes de testar. Para convidados no navegador, recarregue o webapp fora da sala. Nenhum novo instalador Mac foi gerado.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.19.4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Corrige a qualidade que ficava presa em baixa resolu├º├úo e os v├¡deos que n├úo terminavam de abrir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Lat├¬ncia est├ível acima de 250 ms n├úo reduz mais a qualidade continuamente. A adapta├º├úo distingue atraso constante de crescimento de lat├¬ncia, perda de pacotes e sobrecarga persistente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Jogos podem reduzir resolu├º├úo para preservar FPS quando faltar banda; texto mant├®m seu perfil de detalhes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- V├¡deo que n├úo conecta ou n├úo decodifica o primeiro quadro tenta novamente automaticamente, mantendo a fonte selecionada.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Ajustes id├¬nticos de qualidade n├úo s├úo reaplicados ao codificador; consultas simult├óneas de estat├¡sticas s├úo agrupadas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+121 testes automatizados aprovados. Teste integrado com cinco espectadores reais sobre conex├úo local, v├¡deo animado e 272 ms simulados nas estat├¡sticas: 1280├ù720 a cerca de 28ÔÇô30 FPS. Recupera├º├úo de conex├úo sem recaptura verificada. A simula├º├úo n├úo reproduz perda, jitter ou redes de provedores diferentes. Somente instalador Windows nesta vers├úo; nenhum novo instalador Mac.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Atualize o aplicativo de todos os transmissores e espectadores para 0.19.4 e reinicie. No navegador, recarregue a p├ígina fora da sala para obter a corre├º├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.19.3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Corrige a disposi├º├úo de controles no aplicativo Windows e melhora o acesso ├ás configura├º├Áes em janelas menores.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.19.2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Melhorias no nome pessoal dos participantes, na reconex├úo e no registro de sess├Áes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.19.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Configura├º├Áes com Nome padr├úo no Windows e no navegador; salvamento dispon├¡vel antes de entrar e durante uma sala.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Campos de cria├º├úo, convite e entrada em salas salvas usam o nome escolhido.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Mudan├ºa de nome do anfitri├úo e dos convidados aparece para todos sem recriar captura, player ou conex├úo de v├¡deo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 113 testes automatizados e integra├º├úo Windows/Chromium com v├¡deo sint├®tico ativo. Sem novo instalador Mac nesta vers├úo, por decis├úo do propriet├írio; os downloads anteriores continuam no hist├│rico.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.19.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Melhorias na organiza├º├úo de salas e nas conex├Áes. Atualiza├º├úo do aplicativo e dos pacotes distribu├¡dos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.18.2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Bot├úo Focar nas lives amplia uma ou duas transmiss├Áes na janela, ocultando os pain├®is da sala.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Tela cheia conjunta, retorno por Esc/Voltar ├á sala, organiza├º├úo lado a lado ou empilhada conforme a janela.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Players, som, volume, PiP e conex├Áes existentes preservados; sem novas capturas nem decodificadores extras.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Navega├º├úo de teclado isolada no foco e restaura├º├úo da interface ao terminar a ├║ltima live ou sair da sala.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 100 testes unit├írios e integra├º├úo Windows/Chromium com duas m├¡dias sint├®ticas. Mac f├¡sico/iPhone/Safari seguem sem homologa├º├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.18.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Corrigido launcher Windows para aceitar e encaminhar convites permanentes ao app, a frio e pela bandeja j├í aberta.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- P├ígina do convite oferece abrir no app ou continuar no navegador, sem entrar automaticamente em uma chamada pela web.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Aviso sonoro sintetizado e visual para novas telas/webcams; atualiza├º├Áes de qualidade n├úo repetem o aviso. Contexto suspenso ap├│s a reprodu├º├úo e liberado ao sair.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Compartilhar ├íudio marcado por padr├úo em fontes compat├¡veis; ├® poss├¡vel desmarcar. Webcam continua sem microfone e captura exige confirma├º├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 95 testes unit├írios e teste integrado Windows/Chromium. Mac f├¡sico/iPhone/Safari e confirma├º├úo de protocolo em Chrome/Firefox reais seguem sem homologa├º├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.18.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Salas permanentes com link fixo e lista salva no app e navegador, mesmo quando todos est├úo offline.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Qualquer membro salvo pode reabrir a chamada; criador ausente n├úo impede entrada. Fontes continuam desligadas at├® confirma├º├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Cadastro no Cloudflare D1 gratuito; m├¡dia segue P2P. Associa├º├úo por aparelho com token pr├│prio cifrado localmente e hash no servidor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Protocolo 9 mantido; convites permanentes exigem app 0.18 ou site atualizado. Mac f├¡sico e iPhone/Safari seguem pendentes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.17.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Mesmo link na recupera├º├úo autom├ítica; tela e webcam entre sobreviventes continuam. Corrigida tamb├®m a lista transit├│ria durante reconex├Áes simult├óneas para manter sele├º├Áes e autoriza├º├Áes de v├¡deo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Estado de recupera├º├úo limitado e guardado somente em mem├│ria, sem senha em texto. Expuls├úo renova credenciais de recupera├º├úo dos demais participantes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Protocolo 9: atualize todos os apps e recarregue o site. Sem servidor pago novo. Depend├¬ncia de sinaliza├º├úo acess├¡vel e participantes sincronizados; Mac f├¡sico/iPhone continuam pendentes de homologa├º├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.16.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ao usar Sair da sala, o controle pode passar a outro participante conectado. As capturas e conex├Áes dos participantes que permanecem s├úo mantidas. Encerrar para todos ├® uma a├º├úo separada do dono.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.15.9 ÔÇö Volume at├® 300%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Controle de volume de 0% a 300%, com porcentagem ao lado do slider.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Amplifica├º├úo real acima de 100%, independente por transmiss├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Silenciar e reconectar preservam o volume escolhido, sem duplicar o som.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Processamento criado somente ao ouvir, suspenso sem ├íudio ou silenciado e encerrado ao remover a imagem.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Navegadores sem suporte ├á amplifica├º├úo informam a limita├º├úo a 100%.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.15.8 ÔÇö Apelido e preset salvos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- ├Ültimo apelido aceito preenchido ao criar ou entrar em salas, inclusive no navegador.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- ├Ültimo preset de tela restaurado: modo, resolu├º├úo, FPS, bitrate e adapta├º├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Prefer├¬ncias locais por perfil do app ou navegador, sem cadastro ou servidor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Webcam preserva o preset da tela; dados inv├ílidos ou armazenamento bloqueado n├úo impedem usar o app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- A fonte e o compartilhamento de ├íudio continuam dependendo da escolha do usu├írio.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.15.7 ÔÇö Mais f├ícil de assistir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Cart├Áes separados para tela e webcam, com nome da pessoa e bot├Áes Assistir / Parar de assistir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Destaque Assistindo agora e orienta├º├úo ao atingir duas transmiss├Áes abertas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Pessoas que n├úo transmitem ficam separadas das op├º├Áes de v├¡deo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Parar de assistir tamb├®m dispon├¡vel no player; foco, ├íudio e volume preservados nas atualiza├º├Áes da sala.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Sem pr├®vias extras ou aumento no limite de dois v├¡deos recebidos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.15.6 ÔÇö Tela cheia e Picture-in-Picture
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Corrige Ampliar, com tela cheia real e sa├¡da por Esc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Adiciona Picture-in-Picture nativo por transmiss├úo recebida.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Mant├®m v├¡deo com a janela principal oculta durante PiP; retoma economia ao fechar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Reutiliza o v├¡deo recebido e preserva ├íudio/volume; limpa o modo ao retirar a fonte.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Mensagens de erro e controles aguardam carregamento do v├¡deo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 58 testes unit├írios e fluxo integrado Windows; Mac f├¡sico pendente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.15.5 ÔÇö Corrigir abertura no aplicativo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Aceita o endere├ºo com barra acrescentada pela normaliza├º├úo do sistema.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Novo endere├ºo local compat├¡vel, preservando os convites anteriores.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Teste do protocolo registrado no Windows, com senha, bandeja e aprova├º├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- P├ígina do convite atualizada para orientar o uso da vers├úo corrigida.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 51 testes unit├írios; Mac f├¡sico e homologa├º├úo manual de navegadores pendentes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.15.4 ÔÇö Cores do seu aplicativo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Seis paletas, incluindo tema claro, e cores de destaque e fundo personalizadas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Pr├®via imediata, salvar, cancelar e restaurar a paleta original.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Prefer├¬ncia local por usu├írio, sem alterar os amigos, a sala ou os v├¡deos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Contraste autom├ítico dos textos e controles.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 50 testes unit├írios e teste da interface Windows; Mac f├¡sico pendente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 0.15.3 ÔÇö Abrir no TelaLeve
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Bot├úo na p├ígina do convite abre o aplicativo instalado no Windows e Mac.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Convite recebido com app fechado ou na bandeja; senha e aprova├º├úo respeitadas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Confirma├º├úo antes de sair de outra sala; repetir convite mant├®m a sess├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Alternativa para continuar no navegador e baixar o app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 47 testes unit├írios e teste integrado com iniciador real do Windows; Mac f├¡sico pendente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hist├│rico das distribui├º├Áes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Os pacotes abaixo foram preparados em 17/10/2026 e arquivados no GitHub posteriormente. Os arquivos de vers├Áes anteriores s├úo preservados; as tags deste reposit├│rio identificam distribui├º├Áes, sem reconstruir um hist├│rico de commits do aplicativo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.15.2 ÔÇö Links diretos para a sala](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.15.2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copiar link da sala passa a gerar convite HTTPS compacto, sem encurtador ou banco adicional. Sala sem senha inicia a entrada ao abrir o link; senha e aprova├º├úo permanecem exigidas. C├│digo anterior dispon├¡vel numa se├º├úo separada. Corre├º├úo da gera├º├úo da p├ígina para preservar o c├│digo minificado e sua integridade. 45 testes unit├írios e testes de links com/sem senha e aprova├º├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.15.1 ÔÇö Recupera├º├úo da qualidade](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.15.1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Corrige a realimenta├º├úo entre estimativa de banda e redu├º├úo inicial que podia manter a imagem em meia resolu├º├úo. A qualidade sobe novamente em uma conex├úo saud├ível; limites de upload, economia do espectador e Priorizar o jogo permanecem. 41 testes unit├írios e teste entre aplicativos confirmando retorno a 1080p sem recapturar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.15.0 ÔÇö Estabilidade, desempenho e controle](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.15.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Recupera├º├úo de v├¡deo e sess├úo sem recapturar, modo Priorizar o jogo, margem de upload, perfil leve de webcam, qualidade gradual e sa├║de de cada fonte. Apelidos, espectadores, escuta minimizada, diagn├│stico sem credenciais, aprova├º├úo, bloqueio, expuls├úo e renova├º├úo de convites. P2P padr├úo e SFU/TURN pr├│prios opcionais, sem contrata├º├úo de servidores. Convite de oito horas deixa de limitar a dura├º├úo da sala. 39 testes unit├írios; integra├º├úo sint├®tica com dez espectadores e SFU local. Homologa├º├úo f├¡sica em jogos, iPhone/Safari e Mac permanece pendente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.14.0 ÔÇö ├üudio isolado no Mac](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.14.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Captura nativa experimental por aplicativo no macOS 14.2+, com exclus├úo do Discord instalado na tela inteira. Filtro por lista expl├¡cita, conversor est├®reo 48 kHz e encerramento em falhas. 29 testes unit├írios e autoteste nativo de pol├¡tica/convers├úo; captura real, permiss├Áes e desempenho em Mac f├¡sico ainda n├úo validados.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.13.0 ÔÇö Mac e verifica├º├úo autom├ítica](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.13.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DMG/ZIP para Mac Intel e Apple Silicon, verifica├º├úo autom├ítica com download manual no Mac e notifica├º├Áes de vers├úo na bandeja Windows sem abrir Chromium. Fonte preservado em reposit├│rio privado. 28 testes passaram em Windows/macOS; instaladores Mac gerados em runner macOS, ainda sem teste f├¡sico do usu├írio ou Developer ID.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.12.0 ÔÇö ├üudio de aplicativo e tela sem Discord](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.12.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+├üudio da janela usa captura nativa por ├írvore de processos do aplicativo escolhido. Tela inteira mistura sess├Áes permitidas e exclui Discord instalado (incluindo novas inst├óncias) e o pr├│prio TelaLeve. Sem driver, grava├º├úo ou mudan├ºa do som local. Descoberta separada da mixagem, temporiza├º├úo de ├íudio do Windows, buffers limitados e encerramento ao sair.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Falhas n├úo ativam ├íudio geral. Outras janelas/abas do mesmo programa n├úo s├úo separadas. Discord em navegador n├úo ├® filtrado de forma independente. Recurso dispon├¡vel no app Windows com suporte ├á API de loopback por processo; navegador/Mac continuam com seu seletor nativo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25 testes unit├írios, tons sint├®ticos isolados, rein├¡cio de inst├óncias Discord simuladas, envio nativo de ├íudio/v├¡deo por P2P, controles e regress├úo de tela+webcam em dois apps. Discord real em chamada, Windows 10 f├¡sico e Mac n├úo foram validados nesta etapa.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.11.0 ÔÇö Iniciar com Windows e tela com ├íudio](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.11.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Op├º├úo para iniciar somente a bandeja nativa com o Windows, desligada por padr├úo. Atualiza├º├úo preserva a escolha e desinstala├º├úo remove a entrada. Nenhuma sala ou captura ├® iniciada automaticamente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tela com ├íudio opcional da sa├¡da padr├úo do Windows, silenciamento independente, volume por transmiss├úo recebida e pausa conjunta de som/imagem. Webcam permanece sem microfone. ├üudio do Discord tamb├®m entra se usar a mesma sa├¡da; captura exclusiva por aplicativo ainda n├úo est├í implementada. Navegadores dependem da disponibilidade de captura da fonte.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.10.0 ÔÇö Instalador e atualiza├º├úo autom├ítica](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.10.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instalador Windows por usu├írio com atalhos e desinstalador. O app instalado procura e baixa atualiza├º├Áes pelo GitHub Releases fora de salas, valida assinatura Ed25519 e SHA-512, e instala ao sair ou reiniciar. Fechar para a bandeja com atualiza├º├úo pronta preserva o funcionamento em segundo plano, sem ligar captura. Prefer├¬ncias s├úo mantidas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A migra├º├úo de ZIP antigo para instalador ├® manual na primeira vez. O port├ítil n├úo atualiza automaticamente. A assinatura pr├│pria das atualiza├º├Áes n├úo substitui um certificado Authenticode do Windows; esta pr├®via pode mostrar editor desconhecido.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.9.0 ÔÇö Acesso gratuito pelo celular com link e QR Code](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.9.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+P├ígina p├║blica HTTPS no Cloudflare Pages, link privado e QR Code gerado no app. O link completo tamb├®m ├® aceito no campo de convite do aplicativo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+N├úo precisa abrir portas ou configurar certificado no PC para essa op├º├úo. V├¡deo continua P2P; n├úo inclui servi├ºo TURN. Algumas redes restritivas podem exigir TURN.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.8.0 ÔÇö Hospedagem local para navegador](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.8.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O dono da sala pode hospedar a p├ígina HTTPS no PC, escolher porta/certificado e compartilhar link. A pr├®via HTTP fica restrita a localhost.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A hospedagem local avan├ºada exige certificado confi├ível e configura├º├úo de rede. A op├º├úo simplificada sem encaminhamento de portas chega na 0.9.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.7.0 ÔÇö Um app para criar, entrar, assistir e transmitir](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.7.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O mesmo aplicativo Windows cria salas e entra por convite/senha. Convidados assistem e transmitem tela e webcam no app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O HTML permanece como alternativa. A distribui├º├úo nativa ├® Windows x64; Mac nativo ainda n├úo est├í dispon├¡vel.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.6.0 ÔÇö Tela e webcam ao mesmo tempo](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.6.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cada pessoa transmite tela e webcam simultaneamente, com pausa e parada independentes. Duas fontes da mesma pessoa podem ser assistidas juntas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O protocolo mudou: atualize aplicativo e participante para a mesma vers├úo. O or├ºamento de upload ├® compartilhado entre as fontes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.5.0 ÔÇö Seletor de fontes, modos e webcam](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.5.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Abas Aplicativos, Tela inteira e Webcam; perfis Jogos, texto e Personalizada; atalhos SD/HD. Webcam ativada somente ap├│s confirma├º├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nesta vers├úo cada pessoa transmite tela OU webcam. Tela e webcam simult├óneas chegam na 0.6.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.4.0 ÔÇö V├írias pessoas transmitindo na sala](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.4.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Convidados tamb├®m podem transmitir. Cada participante escolhe at├® duas imagens para assistir simultaneamente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nesta vers├úo cada pessoa compartilha uma fonte de tela por vez. Use app e participante da mesma vers├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.3.0 ÔÇö Criar sala antes de compartilhar](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.3.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fluxo inicial para criar sala e depois escolher a tela. Parar a captura mant├®m a sala e o convite; sair encerra a sala.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Use o espectador da mesma vers├úo para aguardar na sala antes da transmiss├úo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.2.0 ÔÇö Transmiss├úo P2P para dez espectadores](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.2.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Migra├º├úo para v├¡deo P2P, sinaliza├º├úo p├║blica PeerJS, convite e senha opcional. Espectador independente em HTML.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+At├® dez espectadores. N├úo inclui webcam; n├úo h├í ├íudio. P2P pode exigir TURN em redes restritivas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## [0.1.0 ÔÇö Primeira pr├®via para Windows](https://github.com/MuriloBalancieri/telaleve-releases/releases/tag/v0.1.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Compartilhamento de tela com bandeja nativa, pausa/retomada e diagn├│stico local. Arquitetura inicial com LiveKit, antes da migra├º├úo para P2P.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vers├úo hist├│rica: o uso pela internet exigia servidor LiveKit e servidor de salas. Limite original de cinco espectadores.
+
+
+
+
+
+
+
+
+
+
+
