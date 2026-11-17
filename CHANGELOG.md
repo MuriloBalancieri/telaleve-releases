@@ -1,5 +1,18 @@
 # Histórico de versões
 
+## 0.25.2
+
+Live da Twitch em sala permanente mesmo quando quem hospeda está em uma versão anterior.
+
+- **Diagnóstico do caso relatado:** o canal estava ao vivo, o player oficial abria em 1080p60 e o canal já estava gravado no cadastro D1 da sala. O quadro não aparecia porque, em sala permanente, o canal viaja pelo roster de **quem hospeda** — se essa pessoa estiver na 0.24.0 ou anterior, o quadro simplesmente não existe para ninguém.
+- **Correção:** quem entra como convidado agora lê o canal direto do cadastro da sala (D1). Se o host estiver em versão antiga, o convidado na 0.25.2 ainda vê a live, com o player e o seletor de qualidade.
+- Pausar/Encerrar continuam exclusivos de quem hospeda, porque dependem do roster. Sem host atualizado, o convidado assiste sem esses dois comandos.
+- Nada muda para salas temporárias: nelas o canal continua sendo o informado ao criar a sala ou digitado no bloco *Live da Twitch*.
+
+**Como usar:** atualize todos os participantes, de preferência também quem hospeda. Para conferir o canal salvo, abra a sala permanente e veja o bloco *Live da Twitch*; no painel de administração o campo mostra o mesmo valor gravado no D1.
+
+184 testes automatizados passaram; o player foi validado com o canal real (1080p60, fonte) e o cadastro conferido no D1. Sem novo instalador Mac.
+
 ## 0.25.1
 
 Correção do campo **Live da Twitch** no painel de administração.
