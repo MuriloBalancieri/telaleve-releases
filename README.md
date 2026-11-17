@@ -1,639 +1,71 @@
-# TelaLeve ÔÇö Baixar e instalar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Compartilhe tela e webcam com seus amigos. Baixe somente o instalador do seu computador.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Downloads
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- [Windows 0.25.0](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.25.0/TelaLeve-Setup-0.25.0.exe)
-
-
-
-
-
-
-
-
-
-
-
-
-- [Mac Apple Silicon 0.19.0](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.19.0/TelaLeve-0.19.0-mac-arm64.dmg)
-
-
-
-
-
-
-
-
-
-
-
-
-- [Mac Intel 0.19.0](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.19.0/TelaLeve-0.19.0-mac-x64.dmg)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Os instaladores Mac acima s├úo a ├║ltima vers├úo existente para essa plataforma. Esta atualiza├º├úo n├úo inclui novo instalador Mac.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Como instalar e atualizar
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No Windows, execute o arquivo TelaLeve-Setup e siga as instru├º├Áes. Para atualizar, use o atualizador do aplicativo ou execute o instalador mais recente. Seu perfil ├® preservado. Reinicie o TelaLeve ap├│s atualizar.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-No Mac, abra o arquivo DMG e arraste o TelaLeve para Aplicativos. Consulte as [instru├º├Áes para macOS](docs/MACOS.md).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-N├úo precisa instalar os arquivos blockmap, yml, JSON ou SHA256SUMS; eles servem ├á atualiza├º├úo e ├á verifica├º├úo dos downloads.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Entrar pelo navegador
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Abra o convite recebido e escolha continuar no navegador. O [webapp](https://telaleve-p2p.pages.dev/) tamb├®m permite entrar na sala. Recarregue a p├ígina fora da sala para receber atualiza├º├Áes.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Vers├Áes anteriores
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Consulte os [releases](https://github.com/MuriloBalancieri/telaleve-releases/releases) e o [hist├│rico de vers├Áes](CHANGELOG.md).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Uso da c├ómera (0.19.6)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-O aplicativo Windows mostra os nomes que o sistema indica usando a c├ómera. A lista pode ser incompleta e n├úo confirma bloqueio da webcam escolhida.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Recupera├º├úo de v├¡deo (0.19.7)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Recupera conex├Áes cujo v├¡deo para ap├│s abrir, preservando a captura original. Atualize tamb├®m quem transmite. Consulte os limites de valida├º├úo nas notas da vers├úo.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Menu e tecla Alt (0.19.8)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Remove o menu padr├úo acionado por Alt no aplicativo Windows. Atualize e reinicie o TelaLeve.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Pr├®vias locais e webcam HD (0.19.9)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Confira sua pr├│pria tela e webcam pelos bot├Áes Ver minha tela e Ver minha webcam. A c├ómera agora prefere 720p/30 FPS quando dispon├¡vel. Atualize e reinicie o TelaLeve Windows.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Atalho global de transmiss├úo (0.20.0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Em Configura├º├Áes, salve um atalho e seu preset. Dentro da sala, ele inicia o monitor principal inteiro com som e sem seletor. Atualize e reinicie o TelaLeve Windows.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Atalho Ctrl + [ (0.20.1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-O campo de atalho aceita Ctrl + [ e Ctrl + ]. Atualize o app, grave a combina├º├úo em Configura├º├Áes e clique em Salvar atalho.
-
-
-
-
-
-
-
-
-
-
-
-
-## Liga/desliga e c├ómera do celular (0.21.0)
-
-
-
-
-
-
-
-
-
-
-
-O bot├úo e o atalho ligam/desligam a tela. Em Ligar webcam, use Usar c├ómera do celular para conectar pelo QR code. Mantenha a p├ígina do telefone aberta. Atualize e reinicie o TelaLeve.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Qualidade dos clipes (0.22.1)
-
-
-
-
-
-
-
-Salve os ├║ltimos 30, 45 ou 60 segundos do monitor principal, tamb├®m fora da sala. Abra Configura├º├Áes ÔåÆ Clipes da tela, escolha atalho e pasta e ative o buffer. Salva em MP4/H.264 quando compat├¡vel, ou WebM. Qualidade at├® 1080p/30 ou 60 FPS, com op├º├úo Economia. Desative e reative o buffer ap├│s alterar a qualidade. A op├º├úo de nuvem usa uma pasta sincronizada pelo seu servi├ºo. O buffer fica desligado ao iniciar o app.
-
-
-
-
-
-## Clipes nativos NVIDIA (0.23.0)
-
-
-
-Salve os ├║ltimos 30, 45 ou 60 segundos do monitor principal, tamb├®m fora da sala. Abra Configura├º├Áes ÔåÆ Clipes da tela, escolha atalho e pasta e ative o buffer. Motor nativo DirectX + NVENC em computadores NVIDIA compat├¡veis, com MP4/AAC e qualidade at├® 1080p/30 ou 60 FPS. Fora da sala, fechar a janela mant├®m a grava├º├úo e libera a interface. Compatibilidade permanece dispon├¡vel para outros computadores. Desative e reative o buffer ap├│s alterar a qualidade. A op├º├úo de nuvem usa uma pasta sincronizada pelo seu servi├ºo. O buffer fica desligado ao iniciar o app.
-
-
-## AMD e buffer autom├ítico (0.24.0)
-
-Salve os ├║ltimos 30, 45 ou 60 segundos do monitor principal, tamb├®m fora da sala. Abra Configura├º├Áes ÔåÆ Clipes da tela, escolha atalho e pasta e ative o buffer. Detec├º├úo autom├ítica para AMD AMF e NVIDIA NVENC em placas compat├¡veis, com alternativa de Compatibilidade e op├º├úo de iniciar o buffer junto com o app. AMD f├¡sico ainda n├úo validado. MP4/AAC com qualidade at├® 1080p/30 ou 60 FPS. Fora da sala, fechar a janela mant├®m a grava├º├úo e libera a interface. Compatibilidade permanece dispon├¡vel para outros computadores. Desative e reative o buffer ap├│s alterar a qualidade. A op├º├úo de nuvem usa uma pasta sincronizada pelo seu servi├ºo. O buffer pode iniciar com o app quando a op├º├úo correspondente for marcada e salva.
+# TelaLeve — Baixar e instalar
+
+Compartilhe tela e webcam com seus amigos. Baixe somente o instalador do seu computador.
+
+## Downloads
+
+- [Windows 0.25.0](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.25.0/TelaLeve-Setup-0.25.0.exe)
+- [Mac Apple Silicon 0.19.0](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.19.0/TelaLeve-0.19.0-mac-arm64.dmg)
+- [Mac Intel 0.19.0](https://github.com/MuriloBalancieri/telaleve-releases/releases/download/v0.19.0/TelaLeve-0.19.0-mac-x64.dmg)
+
+Os instaladores Mac acima são a última versão existente para essa plataforma. Esta atualização não inclui novo instalador Mac.
+
+## Como instalar e atualizar
+
+No Windows, execute o arquivo TelaLeve-Setup e siga as instruções. Para atualizar, use o atualizador do aplicativo ou execute o instalador mais recente. Seu perfil é preservado. Reinicie o TelaLeve após atualizar.
+
+No Mac, abra o arquivo DMG e arraste o TelaLeve para Aplicativos. Consulte as [instruções para macOS](docs/MACOS.md).
+
+Não precisa instalar os arquivos blockmap, yml, JSON ou SHA256SUMS; eles servem à atualização e à verificação dos downloads.
+
+## Entrar pelo navegador
+
+Abra o convite recebido e escolha continuar no navegador. O [webapp](https://telaleve-p2p.pages.dev/) também permite entrar na sala. Recarregue a página fora da sala para receber atualizações.
+
+## Versões anteriores
+
+Consulte os [releases](https://github.com/MuriloBalancieri/telaleve-releases/releases) e o [histórico de versões](CHANGELOG.md).
+
+## Uso da câmera (0.19.6)
+
+O aplicativo Windows mostra os nomes que o sistema indica usando a câmera. A lista pode ser incompleta e não confirma bloqueio da webcam escolhida.
+
+## Recuperação de vídeo (0.19.7)
+
+Recupera conexões cujo vídeo para após abrir, preservando a captura original. Atualize também quem transmite. Consulte os limites de validação nas notas da versão.
+
+## Menu e tecla Alt (0.19.8)
+
+Remove o menu padrão acionado por Alt no aplicativo Windows. Atualize e reinicie o TelaLeve.
+
+## Prévias locais e webcam HD (0.19.9)
+
+Confira sua própria tela e webcam pelos botões Ver minha tela e Ver minha webcam. A câmera agora prefere 720p/30 FPS quando disponível. Atualize e reinicie o TelaLeve Windows.
+
+## Atalho global de transmissão (0.20.0)
+
+Em Configurações, salve um atalho e seu preset. Dentro da sala, ele inicia o monitor principal inteiro com som e sem seletor. Atualize e reinicie o TelaLeve Windows.
+
+## Atalho Ctrl + [ (0.20.1)
+
+O campo de atalho aceita Ctrl + [ e Ctrl + ]. Atualize o app, grave a combinação em Configurações e clique em Salvar atalho.
+
+## Liga/desliga e câmera do celular (0.21.0)
+
+O botão e o atalho ligam/desligam a tela. Em Ligar webcam, use Usar câmera do celular para conectar pelo QR code. Mantenha a página do telefone aberta. Atualize e reinicie o TelaLeve.
+
+
+## Qualidade dos clipes (0.22.1)
+
+Salve os últimos 30, 45 ou 60 segundos do monitor principal, também fora da sala. Abra Configurações → Clipes da tela, escolha atalho e pasta e ative o buffer. Salva em MP4/H.264 quando compatível, ou WebM. Qualidade até 1080p/30 ou 60 FPS, com opção Economia. Desative e reative o buffer após alterar a qualidade. A opção de nuvem usa uma pasta sincronizada pelo seu serviço. O buffer fica desligado ao iniciar o app.
+
+## Clipes nativos NVIDIA (0.23.0)
+
+Salve os últimos 30, 45 ou 60 segundos do monitor principal, também fora da sala. Abra Configurações → Clipes da tela, escolha atalho e pasta e ative o buffer. Motor nativo DirectX + NVENC em computadores NVIDIA compatíveis, com MP4/AAC e qualidade até 1080p/30 ou 60 FPS. Fora da sala, fechar a janela mantém a gravação e libera a interface. Compatibilidade permanece disponível para outros computadores. Desative e reative o buffer após alterar a qualidade. A opção de nuvem usa uma pasta sincronizada pelo seu serviço. O buffer fica desligado ao iniciar o app.
+
+## AMD e buffer automático (0.24.0)
+
+Salve os últimos 30, 45 ou 60 segundos do monitor principal, também fora da sala. Abra Configurações → Clipes da tela, escolha atalho e pasta e ative o buffer. Detecção automática para AMD AMF e NVIDIA NVENC em placas compatíveis, com alternativa de Compatibilidade e opção de iniciar o buffer junto com o app. AMD físico ainda não validado. MP4/AAC com qualidade até 1080p/30 ou 60 FPS. Fora da sala, fechar a janela mantém a gravação e libera a interface. Compatibilidade permanece disponível para outros computadores. Desative e reative o buffer após alterar a qualidade. A opção de nuvem usa uma pasta sincronizada pelo seu serviço. O buffer pode iniciar com o app quando a opção correspondente for marcada e salva.
 
 ## Live da Twitch (0.25.0)
 
