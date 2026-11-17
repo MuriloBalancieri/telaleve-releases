@@ -1,5 +1,18 @@
 # Histórico de versões
 
+## 0.25.3
+
+A live da Twitch passou a abrir também no aplicativo instalado, e o status aparece de imediato.
+
+- **Causa do quadro branco:** o player da Twitch responde com `frame-ancestors http://localhost:* https://localhost:*`. No aplicativo, a página principal vinha de `file://`, então o player recusava o iframe (área branca) e nunca avisava “pronto”. A página intermediária em localhost não resolvia porque o `file://` continuava sendo um ancestral.
+- **Correção:** o aplicativo agora entrega a própria interface em `http://localhost` (porta estável guardada no perfil, com alternativa aleatória se estiver ocupada). Assim o único ancestral do player é `localhost`. A página intermediária do player foi removida.
+- **Status imediato:** a etiqueta e a linha da lista passam a “AO VIVO” assim que os metadados do canal respondem (título, jogo e espectadores, em menos de um segundo). O player continua carregando atrás e assume o comando quando fica pronto.
+- **Sala permanente:** continua valendo a leitura do canal direto do cadastro (D1) para quem entra, além do roster de quem hospeda.
+
+**Observação:** a página interna do app mudou de origem. O apelido salvo no navegador interno pode voltar ao padrão uma vez; as configurações, salas e o canal continuam intactos. Para a live no aplicativo, atualize também quem hospeda.
+
+184 testes automatizados passaram, incluindo o servidor local que entrega a interface. Sem novo instalador Mac.
+
 ## 0.25.2
 
 Live da Twitch em sala permanente mesmo quando quem hospeda está em uma versão anterior.
