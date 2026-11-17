@@ -1,5 +1,17 @@
 # Histórico de versões
 
+## 0.25.1
+
+Correção do campo **Live da Twitch** no painel de administração.
+
+- O painel já mostrava o campo em cada sala permanente, mas ao clicar em **Salvar live** aparecia **“Operação não autorizada.”**. O processo principal do aplicativo só aceitava as operações `status`, `list`, `grant`, `session` e `ticket`; agora aceita também `settings`.
+- O servidor já estava correto: a operação `settings` grava o canal no D1 e devolve o valor para todos os aparelhos. Nenhuma migração nova é necessária.
+- O restante da 0.25.0 continua igual: live como transmissão normal, controles apenas do TelaLeve, seletor de qualidade, indicador AO VIVO/fora do ar, “Abrir na Twitch” e canal salvo com a sala permanente.
+
+**Como usar:** atualize e reinicie. Abra **Administração**, escolha a sala permanente, informe o canal e clique em **Salvar live**. Quem já estiver na sala recebe a mudança em até 20 segundos; quem entrar depois já recebe a live.
+
+184 testes automatizados passaram, incluindo o novo caso que confirma que a operação `settings` é aceita pelo processo principal. Sem novo instalador Mac.
+
 ## 0.25.0
 
 Live da Twitch dentro da sala, com os controles do TelaLeve e a qualidade da transmissão.
