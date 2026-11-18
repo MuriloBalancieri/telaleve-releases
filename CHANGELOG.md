@@ -1,5 +1,15 @@
 # Histórico de versões
 
+## 0.25.6
+
+O botão de login da Twitch fica sempre visível no quadro da live.
+
+- Antes ele só aparecia quando o player não iniciava em 12 s; em canais que tocam normalmente ficava escondido e não dava para entrar na conta pelo app.
+- Agora **Entrar na Twitch** aparece sempre na legenda do quadro (ao lado de Parar de assistir, Picture-in-Picture, Ampliar e Abrir na Twitch). No navegador, onde não existe janela de login do app, ele continua oculto.
+- O comportamento é o mesmo: abre `twitch.tv/login` na sessão do aplicativo, grava os cookies ao fechar e recria o player; a sessão continua valendo depois de reiniciar o computador.
+
+**Como usar:** atualize e reinicie. Na live, clique em **Entrar na Twitch**, faça login na janela que abrir e feche-a.
+
 ## 0.25.5
 
 Login da Twitch dentro do aplicativo para liberar conteúdo restrito.
