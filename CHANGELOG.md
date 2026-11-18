@@ -1,5 +1,18 @@
 # Histórico de versões
 
+## 0.25.5
+
+Login da Twitch dentro do aplicativo para liberar conteúdo restrito.
+
+- **Botão Entrar na Twitch:** aparece no quadro quando a live está no ar mas o player não inicia (conteúdo para públicos específicos). Abre a página de login da Twitch em uma janela do próprio aplicativo, na mesma sessão usada pelo player.
+- **Sessão persistente:** os cookies da Twitch ficam no perfil do TelaLeve (como o acesso do administrador), são gravados ao fechar a janela e ao sair do app, e continuam válidos depois de reiniciar o computador. Você entra uma vez.
+- **Recarga automática:** ao fechar a janela de login, o quadro recria o player com a sessão nova. Se a Twitch ainda exigir login dentro do embed, o botão **Abrir na Twitch** continua como caminho alternativo no navegador.
+- **Mensagem mais clara:** em vez de sugerir clicar no player, o aviso agora diz que o conteúdo é restrito e aponta as duas opções.
+
+**Como usar:** atualize e reinicie. Na live restrita, clique em **Entrar na Twitch**, faça o login na janela que abrir e feche – a live recarrega sozinha.
+
+186 testes automatizados passaram. Sem novo instalador Mac.
+
 ## 0.25.4
 
 Picture-in-Picture para a live da Twitch e correção do enquadramento na tela cheia.
