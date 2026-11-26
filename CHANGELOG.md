@@ -1,5 +1,18 @@
 # Histórico de versões
 
+## 0.26.4
+
+Corrige o número da versão exibido no aplicativo.
+
+- **A versão no cabeçalho estava fixa:** o rótulo mostrava `P2P 0.26.1` desde aquela versão, mesmo com o app já atualizado (0.26.2 e 0.26.3). O aplicativo estava correto; só o texto era antigo.
+- **Agora vem do app:** o número é lido da versão real do executável (`app.getVersion()`), então acompanha todas as atualizações futuras.
+- Nada muda no funcionamento da sala, do pareamento ou da transmissão.
+- 206 testes automatizados passaram, incluindo um teste que impede fixar a versão no HTML novamente.
+
+**Como conferir:** atualize para 0.26.4 e veja o canto superior direito do cabeçalho mostrando `P2P 0.26.4`.
+
+Sem novo instalador Mac.
+
 ## 0.26.3
 
 QR do aviso de LoL e da webcam do celular protegidos na transmissão.
