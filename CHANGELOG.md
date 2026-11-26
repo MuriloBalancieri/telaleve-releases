@@ -1,5 +1,18 @@
 # Histórico de versões
 
+## 0.26.1
+
+Página própria para o aviso de partida do LoL no celular.
+
+- **`lol.html` separada:** o QR do aviso agora abre uma página dedicada, leve, só com Conectar, status e o botão Aceitar partida. Nada de câmera, vídeo ou seletor de câmera nessa tela.
+- **Página da webcam de volta ao foco dela:** `phone.html` voltou a ser apenas a câmera do celular, sem o modo LoL misturado.
+- O resto do fluxo é igual: QR válido por 5 minutos e para um celular, vibração e som sintetizado quando a partida aparece, aceite manual (sem auto-aceite).
+- Se você já escaneou um QR antigo da 0.26.0 (que apontava para `phone.html#lol=`), ele continua funcionando até expirar; os novos apontam para `lol.html`.
+
+**Como usar:** atualize para 0.26.1 e gere um QR novo em **Compartilhar → Câmeras → Avisar partida do LoL no celular**. A página `lol.html` já está publicada no Pages.
+
+195 testes automatizados passaram. Sem novo instalador Mac.
+
 ## 0.26.0
 
 Aviso de partida do League of Legends no celular.
