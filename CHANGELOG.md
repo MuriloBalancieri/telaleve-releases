@@ -1,5 +1,20 @@
 # Histórico de versões
 
+## 0.26.2
+
+O link do aviso de partida do LoL não expira mais e continua valendo o dia todo.
+
+- **Sem prazo de 5 minutos:** o QR do aviso de partida agora vale enquanto o aviso estiver ativo no computador. O QR da webcam do celular continua com 5 minutos, como antes.
+- **Fechar o popup não encerra nada:** ✕ ou Esc só esconde o diálogo. A barra da sala mostra **Aviso de partida ativo**, com **Ver QR** (reabre o mesmo QR) e **Encerrar** (esse sim revoga o link).
+- **Reconexão do mesmo celular:** se a tela bloquear, a aba fechar ou o celular perder a conexão, o aviso continua ativo no PC. Abra o mesmo link de novo e toque em Conectar — quantas vezes precisar no dia. Um celular por vez.
+- **Fechar o League of Legends não derruba o aviso:** reabra o jogo e o TelaLeve volta a acompanhar a fila sozinho. Enquanto o jogo está fechado, ele procura o cliente com menos frequência para não gastar CPU.
+- **Página do celular atualizada:** o link abre a tela dedicada do aviso (`/lol`), sem câmera. Se o PC encerrar o aviso, a página avisa e não deixa reconectar num link revogado.
+- Links de 5 minutos gerados na 0.26.1 continuam funcionando até expirarem.
+
+**Como usar:** atualize para 0.26.2, abra **Compartilhar → Câmeras → Avisar partida do LoL no celular** e escaneie o QR. Pode fechar o popup depois de escanear: o aviso segue ativo na sala.
+
+198 testes automatizados passaram. Sem novo instalador Mac.
+
 ## 0.26.1
 
 Página própria para o aviso de partida do LoL no celular.
