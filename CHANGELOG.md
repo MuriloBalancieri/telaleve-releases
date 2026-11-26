@@ -1,5 +1,19 @@
 # Histórico de versões
 
+## 0.26.3
+
+QR do aviso de LoL e da webcam do celular protegidos na transmissão.
+
+- **Nítido só no seu monitor:** enquanto o QR do aviso de partida ou da câmera do celular está na tela, a janela do TelaLeve sai de qualquer captura externa — transmissão da sala, OBS/Twitch e PrintScreen — mas continua normal no seu monitor para o celular escanear.
+- **Janela inteira:** a proteção é aplicada na janela do app enquanto o QR está aberto (o link/segredo ao lado do QR também desaparece da captura). Ao fechar o diálogo, a janela volta a aparecer normalmente.
+- **Dois QRs ao mesmo tempo:** abrir o aviso do LoL e a câmera juntos mantém a proteção até o último ser fechado.
+- **Sem efeito colateral no fluxo:** o QR do convite da sala não muda; o pareamento, o aceite manual e a câmera continuam iguais. A proteção é desligada automaticamente em crash ou recriação da janela.
+- **Limites do sistema:** no Windows 10 2004 ou mais novo a janela é removida da captura; em versões anteriores ela aparece preta no vídeo. No macOS o ScreenCaptureKit novo ainda pode capturar a janela; no Linux a proteção não existe.
+
+**Como usar:** atualize para 0.26.3, abra o QR do LoL ou da câmera e confira que ele continua nítido no seu monitor. Na transmissão, a janela do TelaLeve não aparece enquanto o QR estiver aberto.
+
+205 testes automatizados passaram, além do smoke Electron que confere a proteção real da janela. Sem novo instalador Mac.
+
 ## 0.26.2
 
 O link do aviso de partida do LoL não expira mais e continua valendo o dia todo.
