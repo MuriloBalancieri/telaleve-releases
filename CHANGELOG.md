@@ -1,5 +1,19 @@
 # Histórico de versões
 
+## 0.26.0
+
+Aviso de partida do League of Legends no celular.
+
+- **QR na sala:** com o LoL aberto no Windows, o TelaLeve mostra um aviso discreto e um botão **Avisar partida no celular** (também em Compartilhar → Câmeras).
+- **Celular:** leia o QR e toque em conectar. Quando a fila achar partida, o celular **vibra**, toca um aviso sintetizado e mostra **Aceitar partida**.
+- **Aceite sempre manual:** sem auto-aceite. O botão aceita a partida no cliente do LoL pelo celular enquanto a janela de confirmação estiver aberta.
+- **LCU só no processo principal:** o token do `lockfile` não chega à página, o certificado local autoassinado é aceito apenas no processo principal e nada é gravado além do pareamento temporário (5 minutos, um celular).
+- iPhone não tem vibração na web; nesse caso o aviso é o som e o destaque visual. O recurso usa a API local do cliente, que não é pública: pode parar de funcionar após atualizações do jogo.
+
+**Como usar:** atualize e reinicie. Abra o LoL, entre numa fila no PC, clique em **Avisar partida no celular**, leia o QR e aceite pelo telefone quando a partida aparecer.
+
+193 testes automatizados passaram, incluindo pareamento (proof, TTL, segundo celular), leitura do lockfile e o poll da LCU com servidor falso. Sem novo instalador Mac.
+
 ## 0.25.6
 
 O botão de login da Twitch fica sempre visível no quadro da live.
