@@ -1,5 +1,15 @@
 # Histórico de versões
 
+## 0.28.2
+
+Acabamento da barra lateral do novo visual.
+
+- **Nome completo:** o seu nome no rodapé da sidebar não é mais truncado em 140 px; ele usa a largura disponível.
+- **Administração:** o botão pode quebrar em duas linhas na sidebar estreita em vez de estourar a largura.
+- Nada muda no funcionamento da sala, da transmissão ou do celular.
+
+212 testes automatizados passaram. Sem novo instalador Mac.
+
 ## 0.28.1
 
 Corrige o layout da nova interface.
