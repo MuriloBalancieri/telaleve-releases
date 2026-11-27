@@ -1,5 +1,16 @@
 # Histórico de versões
 
+## 0.29.2
+
+Fecha as configurações de forma garantida e dá utilidade à barra lateral.
+
+- **✕ nativo:** o cabeçalho das Configurações agora é um formulário `method="dialog"`, então o ✕ fecha o diálogo pelo próprio navegador, sem depender de JavaScript. O cabeçalho segue fixo no topo.
+- **Botão Fechar:** um **Fechar** no rodapé das Configurações, ao lado de Teste neste PC/Usar internet, como segunda saída.
+- **Salas na barra lateral:** a barra fina da esquerda mostra a **sala atual** (destacada) e até oito salas permanentes com a inicial do nome. Clicar numa sala permanente entra nela quando você não está em outra; clicar na sala atual rola até o topo da sala. No layout estreito, onde a barra lateral larga some, o rail passa a ser o acesso às salas.
+- Teste de regressão: a matriz abre as configurações em 1920/1080/800 e confere que o ✕ e o Fechar fecham; confere também a sala atual no rail.
+
+214 testes automatizados e os 18 estados da matriz passaram. Sem novo instalador Mac.
+
 ## 0.29.1
 
 Corrige o botão de fechar das configurações.
