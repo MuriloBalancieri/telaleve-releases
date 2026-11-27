@@ -1,5 +1,20 @@
 # Histórico de versões
 
+## 0.28.0
+
+Cronômetro para aceitar a partida no celular.
+
+- **Tempo real do jogo:** o cartão **Partida encontrada** agora mostra quantos segundos faltam para aceitar, lido do ready check do próprio LoL — não é uma contagem chutada.
+- **Barra que esvazia:** junto do número, uma barra mostra o tempo restante até o fim.
+- **Conectou no meio?** Se o celular entrar durante o ready check, recebe o tempo que ainda falta, não os 10 segundos cheios.
+- **Fim do prazo:** ao zerar, o botão **Aceitar partida** é desabilitado e a página avisa para aceitar pelo computador. O aceite continua sempre manual.
+- **Partida fora da fila:** se a partida for recusada ou expirar antes de você tocar em Aceitar, o cartão some sozinho e o cronômetro para.
+- **Reconexão:** fechar e abrir o link de novo durante uma partida encontrada retoma o cronômetro com o tempo restante.
+
+A página `/lol` foi republicada junto com o app.
+
+209 testes automatizados passaram. Sem novo instalador Mac.
+
 ## 0.27.0
 
 Novo visual do TelaLeve, mais moderno e direto — sem perder nenhuma função.
