@@ -1,5 +1,20 @@
 # Histórico de versões
 
+## 0.28.1
+
+Corrige o layout da nova interface.
+
+- **Sidebar no lugar:** o título fica no topo, os canais logo abaixo e a conexão + perfil no rodapé. A barra lateral não estica mais com o conteúdo da sala e fica fixa enquanto a sala rola.
+- **Salas alinhadas:** a seção "Suas salas" volta a alinhar com o título da página, e os cartões truncam nomes longos.
+- **Barra do usuário:** o botão **Administração** ganha a própria linha na sidebar estreita; nada mais transborda sobre o rodapé.
+- **Sala rolável:** o conteúdo da sala rola dentro da janela e a barra com **Compartilhar tela / Ligar webcam / Sair** fica fixa no rodapé.
+- **Versão neutra:** o número no cabeçalho usa a cor secundária, não a cor de destaque.
+- **Arte do herói:** virou um contorno de tela com o "+" em vez de um bloco sólido.
+
+Seu tema personalizado continua valendo. Se a cor de destaque estiver vermelha e você quiser o visual original, abra **Configurações → Aparência → Restaurar original** (ou escolha uma paleta).
+
+212 testes automatizados passaram. Sem novo instalador Mac.
+
 ## 0.28.0
 
 Cronômetro para aceitar a partida no celular.
