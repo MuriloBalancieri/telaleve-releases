@@ -1,5 +1,15 @@
 # Histórico de versões
 
+## 0.29.4
+
+Fecha de verdade o popup das configurações.
+
+- **Causa raiz:** a regra `#settings-dialog { display: grid }` vencia o `dialog:not([open]) { display: none }` do navegador. O `close()` executava e o `open` virava `false`, mas o popup continuava **pintado** na tela (um “zumbi”), parecendo que o ✕ não funcionava.
+- **Correção:** a grade de duas colunas agora só vale com `#settings-dialog[open]`. Fechado, o navegador aplica `display:none` e o popup some. O ✕, o **Fechar** do rodapé e o Esc passam a esconder o diálogo de verdade.
+- **Teste de regressão:** a matriz de layout passou a exigir `display: none` depois de fechar (além de `open=false`) e que o ponto do ✕ não caia mais no diálogo; valida também dentro da sala, preservando a sala e o tema.
+
+214 testes automatizados e os 18 estados da matriz passaram. Sem novo instalador Mac.
+
 ## 0.29.3
 
 Fecha as configurações sem derrubar a sala e limpa a barra lateral.
