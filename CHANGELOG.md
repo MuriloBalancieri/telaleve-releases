@@ -1,5 +1,22 @@
 # Histórico de versões
 
+## 0.27.0
+
+Novo visual do TelaLeve, mais moderno e direto — sem perder nenhuma função.
+
+- **Início mais claro:** duas ações principais (**Criar sala** e **Entrar com convite**) e o atalho de **sala permanente** como link; as salas salvas aparecem em cartões com status e botão de entrar.
+- **Barra lateral organizada:** rail com o atalho de nova sala, sua sala, o estado da conexão e o seu perfil no rodapé.
+- **Sala com foco no vídeo:** palco amplo, chips de **Tela** e **Webcam** com Pausar, Silenciar e Parar, lista de transmissões da sala, convite copiável e painel de membros.
+- **Seletor de fontes:** abas em pílula (Aplicativos, Tela inteira, Webcam), grade de fontes com prévia e destaque da escolhida, e os atalhos de **câmera do celular** e **aviso do LoL** na aba certa. O aviso "nada é capturado antes de confirmar" continua.
+- **Configurações em cartões:** perfil, aparência, inicialização, rede, avançado, atualizações e administração, com todos os campos atuais preservados.
+- **QR de pareamento com selo:** "Fora da transmissão · nítido só no seu monitor" (proteção da 0.26.3) agora fica visível no diálogo.
+- **Celular repaginado:** câmera do celular e aviso de partida do LoL com botões grandes, cartões e o estado da partida em destaque.
+- O **tema personalizado** continua valendo em todo o app (inclusive a paleta clara); a área de vídeo segue escura de propósito.
+
+**Como usar:** atualize para 0.27.0 e reinicie. Nada muda no pareamento, na transmissão ou no aceite manual.
+
+206 testes automatizados passaram. Sem novo instalador Mac.
+
 ## 0.26.4
 
 Corrige o número da versão exibido no aplicativo.
