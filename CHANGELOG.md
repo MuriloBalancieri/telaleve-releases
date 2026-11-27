@@ -1,5 +1,15 @@
 # Histórico de versões
 
+## 0.29.5
+
+Entrar numa sala permanente sem aviso e sem brilho no rail.
+
+- **Aviso removido:** a barra “Sala permanente salva. Você pode sair e voltar sem pedir outro convite.” não aparece mais ao entrar por uma sala salva; a mensagem de “Entrando…” é limpa quando a sala abre.
+- **Item ativo sem brilho:** a sala atual no rail deixou de ter o fundo/borda vermelha e o halo. Fica um bloco neutro com a inicial na cor de destaque; as salas salvas continuam em cinza.
+- A sala atual continua aparecendo no rail e as salas permanentes continuam clicáveis.
+
+214 testes automatizados e os 18 estados da matriz de layout passaram. Sem novo instalador Mac.
+
 ## 0.29.4
 
 Fecha de verdade o popup das configurações.
