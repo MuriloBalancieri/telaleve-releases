@@ -1,5 +1,15 @@
 # Histórico de versões
 
+## 0.29.1
+
+Corrige o botão de fechar das configurações.
+
+- **Cabeçalho fixo:** o topo de Configurações, Administração e Aparência fica preso no alto do diálogo, então o **✕** continua visível mesmo depois de rolar o conteúdo (que é longo).
+- **Alvo maior:** o botão de fechar passou de 34 para **40 px**, com fundo, borda e destaque no hover — mais fácil de acertar.
+- **Teste de regressão:** a matriz de layout agora abre as configurações em 1920×1080, 1080×850 e 800×680, confere que o ✕ está dentro do diálogo, é o alvo do clique e **fecha** em todas.
+
+214 testes automatizados e os 18 estados da matriz de layout passaram. Sem novo instalador Mac.
+
 ## 0.29.0
 
 Camadas CSS e cobertura completa do novo visual.
