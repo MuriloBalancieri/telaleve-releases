@@ -1,5 +1,17 @@
 # Histórico de versões
 
+## 0.29.0
+
+Camadas CSS e cobertura completa do novo visual.
+
+- **Base sólida:** o CSS do app passou a usar camadas (`base → theme → ui`), então o redesign vence o estilo antigo de forma previsível, sem depender de especificidade. O tema personalizado continua aplicado por cima.
+- **Telas que faltavam:** painel de administração (inclusive o formulário da live da Twitch), prévias locais, ferramentas da sala, diálogos de QR do celular e do LoL, hospedagem em navegador e os painéis internos do seletor de fontes agora seguem o mesmo visual.
+- **Checkboxes e campos:** rótulos de opção realinhados e o link privado da sala ganhou estilo próprio.
+- **Teste de layout automatizado:** 18 estados (Início em cinco tamanhos, sala vazia/transmitindo/tela+câmera, seletor nas abas Telas e Câmeras, configurações, QR da sala, administração e tema claro/escuro) sem overflow, com capturas para conferência.
+- **Teste das camadas:** garante `@charset` único no topo, ordem das camadas e que o CSS das páginas web não foi alterado.
+
+214 testes automatizados passaram. Sem novo instalador Mac.
+
 ## 0.28.2
 
 Acabamento da barra lateral do novo visual.
