@@ -1,5 +1,17 @@
 # Histórico de versões
 
+## 0.29.3
+
+Fecha as configurações sem derrubar a sala e limpa a barra lateral.
+
+- **Causa do “fechou a sala”:** na 0.29.2 o ✕ era submit de um formulário `method="dialog"`. O handler fechava o diálogo e o submit, sem diálogo aberto, recarregava o aplicativo — derrubando a sala. Agora o ✕ é um botão normal, com `preventDefault`, e o teste confere que **as configurações fecham e a sala continua aberta**.
+- **Botão Fechar** no rodapé continua como segunda saída.
+- **“+” removido do rail:** a barra fina não mostra mais o atalho de criar sala; criar/entrar continua na home e na sidebar.
+- **Sala atual sem brilho:** o item da sala ativa no rail deixou de ser um botão focável (virou indicador), então não fica com o anel/sombra vermelha ao fechar. As salas salvas continuam clicáveis.
+- Teste de regressão novo: fechar as configurações **dentro da sala** mantém `#room-view` visível e não volta para a home; a matriz de 18 estados continua verde.
+
+214 testes automatizados passaram. Sem novo instalador Mac.
+
 ## 0.29.2
 
 Fecha as configurações de forma garantida e dá utilidade à barra lateral.
