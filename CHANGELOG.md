@@ -1,5 +1,15 @@
 # Histórico de versões
 
+## 0.29.6
+
+Tira o anel/sombra da sala atual no rail.
+
+- **Causa:** o item ativo tinha `border: 1px solid var(--line)`; como a sala salva abaixo fica com `opacity: .45` (desabilitada enquanto você está na sala), o contraste fazia o border parecer uma sombra/anel em volta do tile.
+- **Correção:** o item da sala atual agora é **sem borda e sem fundo** — fica só a inicial na cor de destaque. As salas salvas continuam como tiles cinza clicáveis.
+- Sem mudança no aviso ao entrar (ele já não aparece desde a 0.29.5).
+
+214 testes automatizados e os 18 estados da matriz passaram. Sem novo instalador Mac.
+
 ## 0.29.5
 
 Entrar numa sala permanente sem aviso e sem brilho no rail.
