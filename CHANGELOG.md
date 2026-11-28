@@ -1,5 +1,16 @@
 # Histórico de versões
 
+## 0.29.7
+
+Painel admin legível, barra lateral proporcional e aceite do LoL corrigido.
+
+- **Painel de administração:** os cards de sala não quebram mais o nome letra por letra. Nome/status ficam numa coluna legível e o formulário "Live da Twitch" ganhou uma linha própria, com o botão de ação à direita.
+- **Barra lateral:** largura fluida (200–232px) em vez de fixa; ela cresce com a janela e fica mais estreita em 1080/1280, sem o degrau antigo. Paddings levemente menores.
+- **Aceite do LoL no celular:** quando a LCU informa `timer: 0` no ready check, o celular mostrava "0s" e desabilitava o Aceitar. Agora 0/ausente significa "desconhecido" (10 s) e o Aceitar continua disponível enquanto o computador não encerrar a partida.
+- A paleta do usuário permanece intocada.
+
+215 testes automatizados e os 18 estados da matriz de layout passaram. Sem novo instalador Mac.
+
 ## 0.29.6
 
 Tira o anel/sombra da sala atual no rail.
